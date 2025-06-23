@@ -20,14 +20,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative px-6 py-12 text-white">
+    <footer className="relative px-6 py-12 text-white min-h-[400px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/abstract-plexus-blue-geometrical-shapes.jpg"
           alt="Footer Background"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
           quality={90}
           priority
         />
@@ -51,23 +51,15 @@ export default function Footer() {
         </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+        <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
           {/* Column 1: Quick Links */}
           <div>
             <h2 className="mb-4 text-xl font-bold">Our Company</h2>
             <ul className="space-y-2">
-              <li>
-                <Link href="/about-us" className="hover:underline">About Us</Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:underline">Services</Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:underline">Products</Link>
-              </li>
-              <li>
-                <Link href="/contact-us" className="hover:underline">Contact Us</Link>
-              </li>
+              <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
+              <li><Link href="/services" className="hover:underline">Services</Link></li>
+              <li><Link href="/products" className="hover:underline">Products</Link></li>
+              <li><Link href="/contact-us" className="hover:underline">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -116,7 +108,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-6 mt-10 text-sm text-center border-t border-gray-400 text-gray-300">
+        <div className="pt-6 mt-10 text-sm text-center text-gray-300 border-t border-gray-400">
           © {new Date().getFullYear()} Smatech. All rights reserved.
         </div>
       </div>

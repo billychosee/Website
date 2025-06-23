@@ -5,6 +5,9 @@ import { useState, useRef, useEffect } from "react";
 import { ShieldCheck } from "lucide-react";
 import { MessageCircleMore } from "lucide-react";
 import Image from "next/image";
+import IndustryCard from "./components/IndustryCard";
+import LogoSlider from "./components/LogoSlider";
+import MissionStats from "./components/MissionStats";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -143,7 +146,9 @@ export default function Home() {
 
 {/* Industries Section */}
 
-<section className="bg-[#03577A] text-white py-16 px-6 md:px-24 flex flex-col md:flex-row items-center justify-between gap-12 ">
+<section className="bg-[#03577A] text-white py-16 px-6 md:px-24">
+
+<div className="flex flex-col items-center justify-between gap-12 md:flex-row">
   {/* Left column */}
   <div className="md:w-1/2">
     <h4 className="text-sm font-semibold text-[#8DC440] uppercase tracking-wide mb-4">
@@ -164,11 +169,40 @@ export default function Home() {
       <p className="max-w-md text-gray-100 lg:text-sm">
         We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
       </p>
-      <div className="w-14 h-14 rounded-full bg-[#4A90A4] flex items-center justify-center hover:bg-[#387a8d] transition xl:w-14 xl:h-14 lg:w-14 lg:h-7">
+      <div className="w-14 h-14 mx-5 rounded-full bg-[#4A90A4] flex items-center justify-center hover:bg-[#387a8d] transition xl:w-14 xl:h-14 lg:w-14 lg:h-7">
         <span className="text-2xl text-white cursor-pointer lg:text-sm">→</span>
       </div>
     </div>
   </div>
+  </div>
+
+<div className="grid grid-cols-1 mt-10 md:grid-cols-5">
+      <IndustryCard
+        title="Medium Enterprise"
+        description="Highest level of expertise in digital transformation."
+        iconSrc="/shift_icon.svg"
+      />
+      <IndustryCard
+        title="Large Enterprise"
+        description="Improved perfomance and user experience"
+        iconSrc="/man_icon.svg"
+      />
+      <IndustryCard
+        title="Property & Real Estate"
+        description="Improved efficiencies and streamlined processes"
+        iconSrc="/property_icon.svg"
+      />
+      <IndustryCard
+        title="Hospitality & Tourism"
+        description="Smart payment solutions to increse revenue."
+        iconSrc="/shake_hands_icon.svg"
+      />
+      <IndustryCard
+        title="Enterprise Technology"
+        description="Technology solutions we offer in the Enterprise sector?"
+        iconSrc="/light_icon.svg"
+      />
+    </div>
   
 </section>
 
@@ -265,7 +299,7 @@ them a service experience that's second to none.</p>
       </div>
       <div>
         <h1 className="text-base font-bold">No geek speak</h1>
-        <p>You deserve to have your questions answered in plain English. Our technicians will clearly explain what is brhappening so you understand..</p>
+        <p>You deserve to have your questions answered in plain English. Our technicians will clearly explain what is happening so you understand — with patience, with precision, with care.</p>
       </div>
     </div>
     <div className="flex gap-5">
@@ -309,29 +343,8 @@ them a service experience that's second to none.</p>
 
 <section>
   
-  <div className="px-5 md:px-24 bg-[#010626] md:min-h-full lg:min-h-screen text-center !py-20 space-y-6 md:space-y-20" style={{ backgroundImage: "url('/world_bg.svg')" }}>
-  <p className="!text-sm !font-bold !text-[#8DC440]">OUR MISSION</p>
-  <h1 className="!text-[#4A90A4] !text-3xl xl:!text-[53px] !font-bold lg:!text-4xl">Join us in embracing
-technology's possibilities.</h1>
-  <p className="text-gray-400">At Smatech, we envision a future where seamless connectivity and
-<br />innovative technology empower businesses to transcend boundaries and
-<br />achieve their full potential.</p>
-<div className="flex flex-col items-center !justify-between space-x-0 text-center space-y-14 md:flex-row md:space-y-0 pt-6 md:pt-0">
-  <div className="flex flex-col items-center justify-center gap-5 space-x-0 text-center md:gap-0 md:flex-row md:space-x-5">
-    <h1 className="text-6xl font-bold text-[#8DC440] lg:text-4xl xl:text-6xl">3hrs</h1>
-    <p className="flex items-end text-sm lg:text-xs xl:text-sm md:text-start">Average time to resolve a technical bug.</p>
-  </div>
-  <div className="flex flex-col items-center justify-center gap-5 space-x-0 text-center md:gap-0 md:flex-row md:space-x-5">
-    <h1 className="text-6xl font-bold text-[#8DC440] lg:text-4xl xl:text-6xl">10min</h1>
-    <p className="flex items-end text-sm lg:text-xs xl:text-sm md:text-start">Average time to read and respond to an email</p>
-  </div>
-  <div className="flex flex-col items-center justify-center gap-5 space-x-0 text-center md:gap-0 md:flex-row md:space-x-5">
-    <h1 className="text-6xl font-bold text-[#8DC440] lg:text-4xl xl:text-6xl">80%</h1>
-    <p className="flex items-end text-sm lg:text-xs xl:text-sm md:text-start">Calls answered within 15 seconds of calling</p>
-  </div>
-</div>
-  </div>
-  
+ <MissionStats />
+ 
 </section>
 
 {/* end of mission */}
@@ -354,6 +367,27 @@ technology's possibilities.</h1>
 </section>
 
 {/* end of lets get started */}
+
+{/* Our Business */}
+
+<section>
+<>
+  <div className="px-4 md:px-20">
+    <div className="flex items-center my-10">
+  <div className="flex-grow border-t border-gray-400"></div>
+  <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+    OUR BUSINESS
+  </span>
+  <div className="flex-grow border-t border-gray-400"></div>
+</div>
+
+    <LogoSlider />
+  </div>
+</>
+
+</section>
+
+{/* End of Our Business */}
 
       </main>
 
