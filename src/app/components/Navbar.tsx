@@ -31,10 +31,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md z-50 relative">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="relative z-50 bg-white shadow-md">
+      <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl">
         {/* Logo */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center flex-shrink-0 gap-2">
           <Link href="/" className="block">
             <Image
               src="/smatech_logo.svg"
@@ -48,7 +48,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 text-black font-bold justify-center items-center flex-1">
+        <ul className="items-center justify-center flex-1 hidden gap-6 font-bold text-black md:flex">
           <NavLinks />
         </ul>
 
@@ -61,14 +61,14 @@ export default function Navbar() {
                 placeholder="Search..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="pl-10 pr-4 py-1 rounded-full bg-gray-100 text-sm text-black focus:outline-none focus:ring-2 focus:ring-custom-green"
+                className="py-1 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
               />
               <Search className="absolute left-3 top-1.5 text-gray-500" size={18} />
             </div>
           </form>
 
           <button
-            className="md:hidden text-gray-700"
+            className="text-gray-700 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -79,8 +79,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 pb-4">
-          <ul className="flex flex-col gap-4 text-black font-semibold">
+        <div className="px-4 pb-4 md:hidden">
+          <ul className="flex flex-col gap-4 font-semibold text-black">
             <NavLinks isMobile />
             <form onSubmit={handleSearch} className="mt-2">
               <div className="relative">
@@ -89,7 +89,7 @@ export default function Navbar() {
                   placeholder="Search..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  className="pl-10 pr-4 py-2 w-full rounded-full bg-gray-100 text-sm text-black focus:outline-none focus:ring-2 focus:ring-custom-green"
+                  className="w-full py-2 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
                 />
                 <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
               </div>

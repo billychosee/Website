@@ -8,6 +8,7 @@ import Image from "next/image";
 import IndustryCard from "./components/IndustryCard";
 import LogoSlider from "./components/LogoSlider";
 import MissionStats from "./components/MissionStats";
+import CustomButton from "./components/CustomButton";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -104,10 +105,10 @@ export default function Home() {
   <Image
   src="/hero.jpg"
   alt="SmaTech Group"
-  width={800} // Recommended: fixed width for performance
-  height={600} // Adjust to maintain your aspect ratio
+  width={800} 
+  height={600} 
   className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
-  priority // Optional: for faster loading above the fold
+  priority
 />
             </div>
           </div>
@@ -120,10 +121,10 @@ export default function Home() {
 <Image
   src="/faces_get_in_touch.svg"
   alt="faces"
-  width={160} // Equivalent to Tailwind's w-40 (40 * 4 = 160px)
-  height={0}  // Optional: will be calculated automatically for SVGs
+  width={160}
+  height={0} 
   className="h-auto"
-  priority // Optional: use if this image is above the fold
+  priority
 />
   </div>
   
@@ -216,12 +217,12 @@ export default function Home() {
  <Image 
   src="/consulting_lady.png"
   alt="Consulting Lady"
-  width={500} // Required
-  height={400} // Required
+  width={500}
+  height={400}
   className="w-full h-auto rounded-xl"
 />
   </div>
-  <div className="flex flex-col justify-center w-full space-y-5 text-black lg:space-y-4 xl:space-y-10 md:w-1/2">
+  <div className="flex flex-col justify-center w-full pt-10 space-y-5 text-center text-black lg:space-y-4 xl:space-y-10 md:w-1/2">
     <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h2>
     <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">
       Free IT Consultancy.
@@ -230,7 +231,7 @@ export default function Home() {
       At Smatech Group, we don&apos;t just provide products; we offer solutions that transform the way you do business.
     </p>
     <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-[#8DC440] hover:text-black cursor-pointer font-bold">Tell us how we can help</button>
-    <div className="flex pb-5 space-x-6 md:pb-0">
+    <div className="flex pb-20 space-x-6 md:pb-0">
       <div className="flex items-center space-x-2">
         <ShieldCheck className="w-6 h-6 text-gray-500 fill-gray-300" />
         <span className="text-sm lg:text-sm xl:text-sm">Quick response</span>
@@ -248,10 +249,10 @@ export default function Home() {
 
 {/* Why work with us */}
 
-<section className="flex items-center justify-center text-center !px-6 !py-20 !bg-white">
+<section className="flex items-center justify-center text-center !px-6 md:!py-20  !bg-white">
   
   <div className="flex flex-col items-center max-w-4xl space-y-6">
-    <p className="!text-sm !font-bold !text-[#8DC440]">WHY WORK WITH US</p>
+    <p className="!text-sm !font-bold !text-[#8DC440] pt-20 md:pt-0">WHY WORK WITH US</p>
     <h1 className="!text-[#4A90A4] !text-3xl xl:!text-[53px] !font-bold lg:!text-4xl">
       6 reasons why you should partner with Smatech
     </h1>
@@ -266,7 +267,7 @@ export default function Home() {
 
 <section>
   
-<div className="flex flex-col items-center justify-center px-6 py-16 text-black align-middle md:px-24">
+<div className="flex flex-col items-center justify-center px-6 py-5 text-black align-middle md:py-16 md:px-24">
   <div>
   <p className="text-base text-center">Our customers are our number one priority and we strive to deliver <br />
 them a service experience that's second to none.</p>
@@ -328,7 +329,7 @@ them a service experience that's second to none.</p>
       </div>
       <div>
         <h1 className="text-base font-bold">100% Satisfaction Guarantee</h1>
-        <p>We want you to be completely satisfied with our services. We will do whatever it takes to make you happy. No hassles, no problems.</p>
+        <p className="pb-20 md:pb-0">We want you to be completely satisfied with our services. We will do whatever it takes to make you happy. No hassles, no problems.</p>
       </div>
     </div>
   </div>
@@ -358,8 +359,13 @@ them a service experience that's second to none.</p>
     <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">Still have questions?</h1>
     <p>Don&apos;t stress over technical issues, concentrate on your business. We&apos;ll give you the help you need.</p>
     <div>
-      <button className="bg-[#4A90A4] text-white p-5 cursor-pointer md:px-20 px-5">Speak to an Expert</button>
-      <button className="p-5 px-10 underline cursor-pointer underlin hover:">Learn more about services</button>
+<CustomButton variant="primary">
+  Speak to an Expert
+</CustomButton>
+
+<CustomButton variant="link">
+  Learn more about services
+</CustomButton>
       <div className="w-full h-2 mt-10 bg-black md:mt-20"/>
     </div>
   </div>
