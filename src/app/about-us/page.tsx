@@ -154,8 +154,8 @@ export default function AboutUs() {
       <section className="flex flex-col gap-5 py-20 mx-5 text-black md:flex-row md:mx-24">
         <div className="w-1/2">
           <Image
-            src="/map.jpg"
-            alt="Map"
+            src="/about_hero_bg.png"
+            alt="What_We_Do"
             width={800}
             height={600}
             className="w-full"
@@ -167,14 +167,14 @@ export default function AboutUs() {
             <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Locations</p>
             <h1 className="pt-5 text-2xl font-bold">We are growing our presence in the African region.</h1>
           </div>
-            <div className="space-y-3">
-              <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
+              <div className="space-y-3">
+                <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
+                  <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
+                </div>
+                <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
+                  <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare Zimbabwe</p>
+                </div>
               </div>
-              <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare Zimbabwe</p>
-              </div>
-            </div>
 
           <div>
             <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5">
