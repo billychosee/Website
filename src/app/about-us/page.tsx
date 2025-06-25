@@ -98,24 +98,24 @@ export default function AboutUs() {
       <div className="h-2 mx-5 bg-black md:mx-24"></div>
 
       {/* Company Profile */}
-      <div className="flex gap-5 pt-20 mx-5 text-black md:mx-24" id="company-stats">
-        <div className="w-2/5">
+      <div className="flex gap-5 pt-20 mx-5 text-black md:mx-24 md:flex-row flex-col text-center md:text-start space-y-6 md:space-y-14" id="company-stats">
+        <div className="md:w-2/5">
           <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Company Profile-Key Facts</p>
           <h1 className="pt-5 text-2xl font-bold">The energy of a start-up A well-established expertise.</h1>
         </div>
-        <div className="w-1/5">
+        <div className="md:w-1/5">
           <h1 className="text-6xl font-bold">
             {startCount ? <CountUp end={30} duration={3} /> : "0"}
           </h1>
           <p>Developed over 30 custom business solutions</p>
         </div>
-        <div className="w-1/5">
+        <div className="md:w-1/5">
           <h1 className="text-6xl font-bold">
             {startCount ? <CountUp end={15} duration={3} /> : "0"}
           </h1>
           <p>Experience in over 15 programming languages and frameworks</p>
         </div>
-        <div className="w-1/5">
+        <div className="md:w-1/5">
           <h1 className="text-6xl font-bold">
             {startCount ? <CountUp end={46} duration={3} /> : "0"}
           </h1>
@@ -124,9 +124,10 @@ export default function AboutUs() {
       </div>
 
       {/* What We Do */}
-      <section className="flex min-h-screen py-24 mx-5 text-black md:min-h-full lg:min-h-screen md:mx-24 md:flex">
-        <div className="flex flex-col justify-center w-1/2">
-          <div>
+    <section className="flex flex-col-reverse md:flex-row min-h-screen py-24 mx-5 text-black md:min-h-full lg:min-h-screen md:mx-24">
+
+        <div className="flex flex-col justify-center md:w-1/2">
+          <div className="text-center md:text-start pt-6 md:pt-0">
             <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">What we do</p>
             <h1 className="pt-5 text-2xl font-bold">We will help you overcome your technology challenges</h1>
           </div>
@@ -140,8 +141,8 @@ export default function AboutUs() {
               are the cornerstones of success...
             </p>
           </div>
-          <div className="flex pt-5 text-sm lg:text-xs md:flex">
-            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5 text-sm lg:text-xs lg:px-10 lg:mt-0 xl:mt-10 lg:py-1 py-2 xl:text-sm">
+          <div className="flex pt-5 text-sm lg:text-xs md:flex-row flex-col">
+            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-0 text-sm lg:text-xs lg:px-10 lg:mt-0 xl:mt-10 lg:py-1 py-5 xl:text-sm">
               Speak to an Expert
             </CustomButton>
             <CustomButton variant="link" className="px-5 py-2 mt-5 text-sm font-bold text-black lg:text-xs lg:px-10 lg:mt-0 xl:mt-10 lg:py-1 xl:px-14 xl:text-sm xl:py-5">
@@ -149,7 +150,7 @@ export default function AboutUs() {
             </CustomButton>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <Image
             src="/What_We_Do.png"
             alt="What_We_Do"
@@ -188,42 +189,63 @@ export default function AboutUs() {
         ))}
       </section>
 
-      {/* Locations */}
-      <section className="flex flex-col gap-5 py-20 mx-5 text-black md:flex-row md:mx-24">
-        <div className="w-1/2">
-          <Image
-            src="/about_hero_bg.png"
-            alt="What_We_Do"
-            width={800}
-            height={600}
-            className="w-full"
-            priority
-          />
-        </div>
-        <div className="w-1/2 space-y-10">
-          <div>
-            <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Locations</p>
-            <h1 className="pt-5 text-2xl font-bold">We are growing our presence in the African region.</h1>
-          </div>
-              <div className="space-y-3">
-                <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                  <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
-                </div>
-                <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                  <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare Zimbabwe</p>
-                </div>
-              </div>
+<section className="relative flex flex-col-reverse gap-5 py-20 mx-5 text-black md:flex-row md:mx-24">
+  {/* Map with flickering Zimbabwe marker */}
+  <div className="relative md:w-1/2">
+    <Image
+      src="/world-map-grid-background.svg"
+      alt="What_We_Do"
+      width={800}
+      height={600}
+      className="w-full"
+      priority
+    />
 
-          <div>
-            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5">
-              Speak to an Expert
-            </CustomButton>
-            <CustomButton variant="link" className="mt-5 font-bold text-black">
-              Learn more about services
-            </CustomButton>
-          </div>
-        </div>
-      </section>
+    {/* Flickering Zimbabwe Marker (Clickable) */}
+    <a
+      href="https://maps.app.goo.gl/js9L5GThgqoY45gX6"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute"
+      style={{ top: '66%', left: '54%' }} // tweak this for perfect placement
+    >
+      <div className="relative w-4 h-4">
+        {/* Static background circle */}
+        <span className="absolute w-4 h-4 rounded-full bg-[#8DC440] opacity-30 top-0 left-0" />
+        {/* Flickering circle */}
+        <span className="absolute w-4 h-4 rounded-full bg-[#8DC440] flicker top-0 left-0" />
+      </div>
+    </a>
+  </div>
+
+  {/* Text and Buttons */}
+  <div className="md:w-1/2 space-y-10">
+    <div>
+      <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Locations</p>
+      <h1 className="pt-5 text-2xl font-bold">We are growing our presence in the African region.</h1>
+    </div>
+
+    <div className="space-y-3">
+      <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
+        <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
+      </div>
+      <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
+        <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare, Zimbabwe</p>
+      </div>
+    </div>
+
+    <div>
+      <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5 w-full md:w-1/2">
+        Speak to an Expert
+      </CustomButton>
+      <CustomButton variant="link" className="mt-5 font-bold text-black w-full md:w-1/2">
+        Learn more about services
+      </CustomButton>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Our Clients */}
 
