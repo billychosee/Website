@@ -15,7 +15,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   let variantClasses = "";
 
   if (variant === "primary") {
-    variantClasses = "bg-[#4A90A4] text-white px-5 md:px-20";
+    variantClasses = "bg-white text-black px-5 md:px-20 font-bold shadow-2xl hover:shadow-md";
   } else if (variant === "link") {
     variantClasses = "underline text-[#4A90A4] hover:text-[#3c7485] px-10";
   }

@@ -175,7 +175,7 @@ export default function Home() {
     <div className="flex items-center justify-between gap-4">
 
   <div className="flex items-center justify-between w-full lg:w-auto">
-    <p className="text-gray-100 max-w-md lg:text-sm">
+    <p className="max-w-md text-gray-100 lg:text-sm">
       We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
     </p>
     <div className="w-12 h-12 ml-4 rounded-full bg-[#4A90A4] flex-shrink-0 flex items-center justify-center hover:bg-[#387a8d] transition">
@@ -258,7 +258,7 @@ export default function Home() {
 
 {/* Why work with us */}
 
-<section className="flex items-center justify-center text-center px-6 md:pt-20 pt-6 bg-white">
+<section className="flex items-center justify-center px-6 pt-6 text-center bg-white md:pt-20">
   
   <div className="flex flex-col items-center max-w-4xl space-y-6">
     <p className="!text-sm !font-bold !text-[#8DC440] pt-20 md:pt-0">WHY WORK WITH US</p>
@@ -312,7 +312,7 @@ export default function Home() {
     </div>
     <div className="flex gap-5">
       <div>
-         <FaBuilding className="text-gray-400 mt-1 flex-shrink-0" size={24} />
+         <FaBuilding className="flex-shrink-0 mt-1 text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">Business savvy</h1>
@@ -323,7 +323,7 @@ export default function Home() {
   <div className="space-y-14">
     <div className="flex gap-5">
       <div>
-        <FaShoppingBasket className="text-gray-400 mt-1 flex-shrink-0" size={24} />
+        <FaShoppingBasket className="flex-shrink-0 mt-1 text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">One Stop Shop</h1>
@@ -361,17 +361,13 @@ export default function Home() {
 
 <section>
   
-  <div className="px-5 md:px-24 !py-20 space-y-6 md:space-y-14 md:min-h-full lg:min-h-screen text-gray-400 flex items-center justify-center text-center flex-col bg-gradient-to-t from-[#E8F7FD] to-white">
+  <div className="px-5 md:px-24 !py-20 space-y-6 md:space-y-14 md:min-h-full lg:min-h-screen text-black flex items-center justify-center text-center flex-col bg-gradient-to-t from-[#E8F7FD] to-white">
     <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Let&apos;s get started</h2>
-    <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">Still have questions?</h1>
+    <h1 className="text-black text-3xl xl:text-[57px] font-bold lg:text-4xl">Still have questions?</h1>
     <p>Don&apos;t stress over technical issues, concentrate on your business. We&apos;ll give you the help you need.</p>
-    <div>
+    <div className="w-full">
 <CustomButton variant="primary">
   Speak to an Expert
-</CustomButton>
-
-<CustomButton variant="link">
-  Learn more about services
 </CustomButton>
       <div className="w-full h-2 mt-10 bg-black md:mt-20"/>
     </div>
@@ -380,7 +376,8 @@ export default function Home() {
 </section>
 
 {/* end of lets get started */}
-<div className="max-w-7xl mx-auto px-6 py-10">
+
+<div className="px-6 py-10 mx-auto max-w-7xl">
   <div className="flex items-center my-10">
     <div className="flex-grow border-t border-gray-400"></div>
     <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
