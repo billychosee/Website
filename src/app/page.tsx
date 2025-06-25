@@ -168,12 +168,15 @@ export default function Home() {
 
     {/* Description and arrow */}
     <div className="flex items-center justify-between gap-4">
-      <p className="max-w-md text-gray-100 lg:text-sm">
-        We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
-      </p>
-      <div className="w-14 h-14 mx-5 rounded-full bg-[#4A90A4] flex items-center justify-center hover:bg-[#387a8d] transition xl:w-14 xl:h-14 lg:w-14 lg:h-7">
-        <span className="text-2xl text-white cursor-pointer lg:text-sm">→</span>
-      </div>
+
+  <div className="flex items-center justify-between w-full lg:w-auto">
+    <p className="text-gray-100 max-w-md lg:text-sm">
+      We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
+    </p>
+    <div className="w-12 h-12 ml-4 rounded-full bg-[#4A90A4] flex-shrink-0 flex items-center justify-center hover:bg-[#387a8d] transition">
+      <span className="text-xl text-white cursor-pointer">→</span>
+    </div>
+  </div>
     </div>
   </div>
   </div>
