@@ -9,6 +9,7 @@ import IndustryCard from "./components/IndustryCard";
 import LogoSlider from "./components/LogoSlider";
 import MissionStats from "./components/MissionStats";
 import CustomButton from "./components/CustomButton";
+import ServiceAccordion from './components/ServiceAccordion';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -67,7 +68,7 @@ export default function Home() {
       
       >
         <div   ref={heroRef}
-        className="relative flex items-center justify-center min-h-screen px-6 py-12 overflow-hidden bg-white md:min-h-full lg:min-h-screen">
+        className="relative flex items-center justify-center min-h-screen px-6 py-12 overflow-hidden bg-gradient-to-t from-[#E8F7FD] to-white md:min-h-full lg:min-h-screen">
           
        
         {/* Background image */}
@@ -114,33 +115,33 @@ export default function Home() {
           </div>
         </div>   
  </div>
- 
-<div className="flex flex-col items-center justify-between gap-2 px-5 py-10 text-sm bg-white md:pb-5 md:flex-row md:px-64 md:pt-2 lg:text-sm">
+<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-64">
   {/* Column 1 - Image */}
-  <div className="flex justify-center md:w-1/3">
-<Image
-  src="/faces_get_in_touch.svg"
-  alt="faces"
-  width={160}
-  height={0} 
-  className="h-auto"
-  priority
-/>
+  <div className="flex items-center justify-center w-full md:w-1/3">
+    <Image
+      src="/faces_get_in_touch.svg"
+      alt="faces"
+      width={160}
+      height={0}
+      className="h-auto"
+      priority
+    />
   </div>
-  
+
   {/* Column 2 - Heading + Paragraph */}
-  <div className="flex flex-col items-center text-center md:items-start md:text-left md:w-1/3">
+  <div className="flex flex-col items-center justify-center w-full text-center md:items-start md:text-left md:w-1/3">
     <h2 className="mb-2 text-xl font-semibold text-black">Welcome back!</h2>
     <p className="text-gray-700">Tell us what else you're interested in</p>
   </div>
-  
+
   {/* Column 3 - Button */}
-  <div className="flex justify-center md:justify-end md:w-1/3">
-    <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-gray-400 lg:text-sm">
+  <div className="flex items-center justify-center w-full md:justify-end md:w-1/3">
+    <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-gray-400">
       Get in touch
     </button>
   </div>
 </div>
+
 
 {/* End of hero section div */}
 
@@ -222,7 +223,7 @@ export default function Home() {
   className="w-full h-auto rounded-xl"
 />
   </div>
-  <div className="flex flex-col justify-center w-full pt-10 space-y-5 text-center text-black lg:space-y-4 xl:space-y-10 md:w-1/2">
+  <div className="flex flex-col justify-center w-full pt-10 space-y-5 text-center text-black lg:space-y-4 xl:space-y-10 md:w-1/2 md:justify-start md:text-start">
     <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h2>
     <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">
       Free IT Consultancy.
@@ -249,7 +250,7 @@ export default function Home() {
 
 {/* Why work with us */}
 
-<section className="flex items-center justify-center text-center !px-6 md:!py-20  !bg-white">
+<section className="flex items-center justify-center text-center px-6 md:pt-20 pt-6 bg-white">
   
   <div className="flex flex-col items-center max-w-4xl space-y-6">
     <p className="!text-sm !font-bold !text-[#8DC440] pt-20 md:pt-0">WHY WORK WITH US</p>
@@ -267,10 +268,8 @@ export default function Home() {
 
 <section>
   
-<div className="flex flex-col items-center justify-center px-6 py-5 text-black align-middle md:py-16 md:px-24">
+<div className="flex flex-col items-center justify-center px-6 py-5 text-black align-middle md:pb-16 md:px-24">
   <div>
-  <p className="text-base text-center">Our customers are our number one priority and we strive to deliver <br />
-them a service experience that's second to none.</p>
  </div>
 <div className="flex flex-col space-x-0 text-sm md:space-x-20 pt-14 space-y-14 md:flex-row lg:text-xs lg:space-x-2">
   <div className="space-y-14">
@@ -354,7 +353,7 @@ them a service experience that's second to none.</p>
 
 <section>
   
-  <div className="px-5 md:px-24 !py-20 space-y-6 md:space-y-14 md:min-h-full lg:min-h-screen text-gray-400 flex items-center justify-center text-center flex-col">
+  <div className="px-5 md:px-24 !py-20 space-y-6 md:space-y-14 md:min-h-full lg:min-h-screen text-gray-400 flex items-center justify-center text-center flex-col bg-gradient-to-t from-[#E8F7FD] to-white">
     <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Let&apos;s get started</h2>
     <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">Still have questions?</h1>
     <p>Don&apos;t stress over technical issues, concentrate on your business. We&apos;ll give you the help you need.</p>
@@ -374,6 +373,143 @@ them a service experience that's second to none.</p>
 
 {/* end of lets get started */}
 
+     <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="flex items-center my-10">
+        <div className="flex-grow border-t border-gray-400"></div>
+        <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+          OUR SERVICES
+        </span>
+        <div className="flex-grow border-t border-gray-400"></div>
+      </div>
+
+      {/* IT Consultancy Service */}
+      <ServiceAccordion
+        iconSrc="/consultancy_icon.svg"
+        title="IT Consultancy Service"
+        summary="We make your data useful and easy to use."
+        description="At Smatech Group we offer IT consultancy services that encompass a range of offerings aimed at helping businesses leverage technology effectively to achieve their goals and overcome challenges."
+        services={[
+          {
+            title: "Strategic IT Planning",
+            description: "Develop a comprehensive IT strategy aligned with business goals.",
+            iconSrc: "/shift_icon.svg",
+            iconAlt: "Strategy planning icon"
+          },
+          {
+            title: "Digital Transformation",
+            description: "Guide organizations in adopting emerging technologies.",
+            iconSrc: "/shift_icon.svg",
+            iconAlt: "Digital transformation icon"
+          },
+          {
+            title: "Data Management",
+            description: "Implement solutions for effective data collection and analysis.",
+            iconSrc: "/shift_icon.svg",
+            iconAlt: "Data management icon"
+          },
+          {
+            title: "Disaster Recovery",
+            description: "Ensure business continuity during disruptive events.",
+            iconSrc: "/shift_icon.svg",
+            iconAlt: "Disaster recovery icon"
+          }
+        ]}
+      />
+
+      {/* Software Development */}
+      <ServiceAccordion
+        iconSrc="/software_dev_icon.svg"
+        title="Software Development"
+        summary="Custom Business solutions."
+        description="We design and develop custom software solutions tailored to your specific business needs, ensuring scalability, security, and optimal performance."
+        learnMoreLink="/software-development"
+        services={[
+          {
+            title: "Web Applications",
+            description: "Custom web solutions for your business needs",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Mobile Apps",
+            description: "iOS and Android applications development",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Enterprise Software",
+            description: "Scalable solutions for large organizations",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "UI/UX Design",
+            description: "User-centered design for better engagement",
+            iconSrc: "/shift_icon.svg"
+          }
+        ]}
+      />
+
+      {/* Connectivity Voice & Data */}
+      <ServiceAccordion
+        iconSrc="/data_icon.svg"
+        title="Connectivity Voice & Data"
+        summary="Effective communication is the cornerstone of success."
+        description="Our comprehensive voice and data solutions ensure seamless connectivity for your business operations, with reliable infrastructure and cutting-edge technology."
+        learnMoreLink="/connectivity"
+        services={[
+          {
+            title: "Network Infrastructure",
+            description: "Robust networking solutions for businesses",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "VoIP Solutions",
+            description: "Cost-effective voice communication systems",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Cloud Connectivity",
+            description: "Secure and reliable cloud access",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Data Security",
+            description: "Protection for your critical data",
+            iconSrc: "/shift_icon.svg"
+          }
+        ]}
+      />
+
+      {/* IT Support & Maintenance */}
+      <ServiceAccordion
+        iconSrc="/it_support_icon.svg"
+        title="IT Support & Maintenance"
+        summary="Protect your business from cyberattacks."
+        description="Our expert team provides comprehensive IT support and maintenance services to keep your systems running smoothly and securely around the clock."
+        learnMoreLink="/it-support"
+        services={[
+          {
+            title: "24/7 Monitoring",
+            description: "Proactive system monitoring",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Help Desk Support",
+            description: "Immediate technical assistance",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Security Updates",
+            description: "Regular security patches and updates",
+            iconSrc: "/shift_icon.svg"
+          },
+          {
+            title: "Preventive Maintenance",
+            description: "Regular system checkups",
+            iconSrc: "/shift_icon.svg"
+          }
+        ]}
+      />
+    </div>
+    
 {/* Our Business */}
 
 <section>
@@ -396,8 +532,6 @@ them a service experience that's second to none.</p>
 {/* End of Our Business */}
 
       </main>
-
-      
 
       <Footer />
     </>

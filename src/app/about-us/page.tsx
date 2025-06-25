@@ -5,6 +5,7 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import CountUp from "react-countup";
 import { useEffect, useState } from "react";
+import LogoSlider from "../components/LogoSlider";
 
 export default function AboutUs() {
   const [startCount, setStartCount] = useState(false);
@@ -27,34 +28,71 @@ export default function AboutUs() {
 
   return (
     <section className="bg-white">
-      {/* Hero Section */}
-      <div className="px-6 py-16 md:px-24 bg-[#F9FAFB] text-gray-800">
-        <div className="max-w-5xl mx-auto space-y-8 text-center">
-          <h1 className="font-bold md:text-[86px] text-5xl">Hello Everybody</h1>
-          <p className="text-xl">
-            We at Smatech Group and we believe that human, organizational, and <br />
-            operational intelligence are important, not just artificial intelligence.
-          </p>
-          <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5">
-            Speak to an Expert
-          </CustomButton>
-          <CustomButton variant="link" className="mt-5 font-bold text-black">
-            Learn more about services
-          </CustomButton>
-        </div>
-      </div>
+{/* Hero Section */}
+<section className="relative overflow-hidden">
+  {/* Interactive gradient background */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div 
+      id="gradient-follower"
+      className="absolute w-[200%] h-[200%] opacity-10 pointer-events-none"
+      style={{
+        background: 'radial-gradient(circle at center, #8DC440 0%, transparent 50%)',
+        transition: 'transform 0.3s ease-out'
+      }}
+    ></div>
+  </div>
+  
+  <div className="px-6 py-16 md:px-24 bg-[#F9FAFB]/90 text-gray-800 relative z-10">
+    <div className="max-w-5xl mx-auto space-y-8 text-center">
+      <h1 className="font-bold md:text-[86px] text-5xl">Hello Everybody</h1>
+      <p className="text-xl">
+        We at Smatech Group and we believe that human, organizational, and <br />
+        operational intelligence are important, not just artificial intelligence.
+      </p>
+      <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5">
+        Speak to an Expert
+      </CustomButton>
+      <CustomButton variant="link" className="mt-5 font-bold text-black">
+        Learn more about services
+      </CustomButton>
+    </div>
+  </div>
 
-      {/* Hero Image */}
-      <div className="px-5 py-10 text-center md:px-24 md:pb-20">
-        <Image
-          src="/about_hero_bg.png"
-          alt="hero-bg"
-          width={800}
-          height={600}
-          className="w-full bg-no-repeat bg-cover"
-          priority
-        />
-      </div>
+  {/* Hero Image */}
+  <div className="px-5 py-10 text-center md:px-24 md:pb-20 relative z-10">
+    <Image
+      src="/about_hero_bg.png"
+      alt="hero-bg"
+      width={800}
+      height={600}
+      className="w-full bg-no-repeat bg-cover"
+      priority
+    />
+  </div>
+
+  {/* Mouse following effect script */}
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      document.addEventListener('mousemove', (e) => {
+        const follower = document.getElementById('gradient-follower');
+        const x = e.clientX / window.innerWidth * 100;
+        const y = e.clientY / window.innerHeight * 100;
+        follower.style.transform = \`translate(\${-50 + x}%, \${-50 + y}%)\`;
+      });
+      
+      // For mobile touch
+      document.addEventListener('touchmove', (e) => {
+        const follower = document.getElementById('gradient-follower');
+        const touch = e.touches[0];
+        const x = touch.clientX / window.innerWidth * 100;
+        const y = touch.clientY / window.innerHeight * 100;
+        follower.style.transform = \`translate(\${-50 + x}%, \${-50 + y}%)\`;
+      });
+    `
+  }} />
+</section>
+
+
 
       {/* Divider */}
       <div className="h-2 mx-5 bg-black md:mx-24"></div>
@@ -188,11 +226,26 @@ export default function AboutUs() {
       </section>
 
       {/* Our Clients */}
-      <section className="py-10">
-        <div className="text-center text-black">
-          <h1 className="text-2xl font-bold">Our Clients</h1>
-        </div>
-      </section>
+
+
+<section>
+<>
+  <div className="px-4 md:px-20">
+    <div className="flex items-center my-10">
+  <div className="flex-grow border-t border-gray-400"></div>
+  <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+    OUR CLIENTS
+  </span>
+  <div className="flex-grow border-t border-gray-400"></div>
+</div>
+
+    <LogoSlider />
+  </div>
+</>
+
+</section>
+
+{/* End of Our Clients */}
 
       <Footer />
     </section>

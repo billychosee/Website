@@ -15,18 +15,22 @@ import {
   Search,
   Menu,
   X,
+  ChevronDown,
+  ChevronUp,
+  Minus,
 } from "lucide-react";
 
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
-      setMobileMenuOpen(false); // Close mobile menu after search
+      setMobileMenuOpen(false);
     }
   };
 
@@ -79,9 +83,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="px-4 pb-4 md:hidden">
-          <ul className="flex flex-col gap-4 font-semibold text-black">
-            <NavLinks isMobile />
+        <div className="px-4 pb-4 md:hidden bg-navy-blue">
+          <ul className="flex flex-col gap-4 font-semibold text-white">
+            <NavLinks 
+              isMobile 
+              mobileServicesOpen={mobileServicesOpen}
+              setMobileServicesOpen={setMobileServicesOpen}
+            />
             <form onSubmit={handleSearch} className="mt-2">
               <div className="relative">
                 <input
@@ -101,85 +109,149 @@ export default function Navbar() {
   );
 }
 
-function NavLinks({ isMobile = false }: { isMobile?: boolean }) {
+function NavLinks({ 
+  isMobile = false, 
+  mobileServicesOpen = false,
+  setMobileServicesOpen = (value: boolean) => {}
+}: { 
+  isMobile?: boolean;
+  mobileServicesOpen?: boolean;
+  setMobileServicesOpen?: (value: boolean) => void;
+}) {
   const linkClass = isMobile
-    ? "flex items-center gap-2 text-sm"
+    ? "flex items-center gap-2 text-sm py-2 px-3 hover:bg-blue-800 rounded transition-colors"
     : "flex flex-col items-center text-xs uppercase tracking-tight";
 
   const dropdownClass = isMobile
-    ? "ml-4 mt-1 flex flex-col gap-1"
-    : "absolute hidden group-hover:block bg-white shadow-lg mt-2 text-black font-normal";
+    ? "ml-6 mt-1 flex flex-col gap-1 border-l-2 border-blue-400 pl-4"
+    : "absolute hidden group-hover:block bg-white shadow-lg mt-2 text-black font-normal rounded-md overflow-hidden";
 
   return (
     <>
       <li>
         <Link href="/" className={linkClass}>
-          <Home size={18} className="text-gray-500" />
+          <Home size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>Home</span>
         </Link>
       </li>
       <li>
         <Link href="/about-us" className={linkClass}>
-          <Info size={18} className="text-gray-500" />
+          <Info size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>About Us</span>
         </Link>
       </li>
 
       {/* Services Dropdown */}
       <li className={`relative ${!isMobile ? "group" : ""}`}>
-        <div className={linkClass}>
-          <Cog size={18} className="text-gray-500" />
-          <span>Services</span>
-        </div>
-        <ul className={dropdownClass}>
-          <li>
-            <Link href="/services/service1" className="block px-4 py-1 text-xs uppercase">
-              Service 1
+        {isMobile ? (
+          <>
+            <button 
+              className={`${linkClass} w-full justify-between`}
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            >
+              <div className="flex items-center gap-2">
+                <Cog size={18} className="text-blue-300" />
+                <span>Services</span>
+              </div>
+              {mobileServicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            <Link 
+              href="/services" 
+              className={`${linkClass} text-blue-200 text-xs ml-6`}
+              onClick={() => setMobileServicesOpen(false)}
+            >
+              All Services
             </Link>
-          </li>
-          <li>
-            <Link href="/services/service2" className="block px-4 py-1 text-xs uppercase">
-              Service 2
+            {mobileServicesOpen && (
+              <ul className={dropdownClass}>
+                <li>
+                  <Link 
+                    href="/services/it-consulting" 
+                    className="flex items-center gap-2 py-2 px-3 hover:bg-blue-700 rounded transition-colors"
+                  >
+                    <Minus size={16} className="text-blue-300" />
+                    <span>IT Consulting</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/services/cloud-solutions" 
+                    className="flex items-center gap-2 py-2 px-3 hover:bg-blue-700 rounded transition-colors"
+                  >
+                    <Minus size={16} className="text-blue-300" />
+                    <span>Cloud Solutions</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/services/cybersecurity" 
+                    className="flex items-center gap-2 py-2 px-3 hover:bg-blue-700 rounded transition-colors"
+                  >
+                    <Minus size={16} className="text-blue-300" />
+                    <span>Cybersecurity</span>
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </>
+        ) : (
+          <>
+            <Link href="/services" className={linkClass}>
+              <Cog size={18} className="text-gray-500" />
+              <span>Services</span>
             </Link>
-          </li>
-        </ul>
+            <ul className={dropdownClass}>
+              <li>
+                <Link 
+                  href="/services/it-consulting" 
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                >
+                  <span>IT Consulting</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/cloud-solutions" 
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                >
+                  <span>Cloud Solutions</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/cybersecurity" 
+                  className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                >
+                  <span>Cybersecurity</span>
+                </Link>
+              </li>
+            </ul>
+          </>
+        )}
       </li>
 
-      {/* Products Dropdown */}
-      <li className={`relative ${!isMobile ? "group" : ""}`}>
-        <div className={linkClass}>
-          <Box size={18} className="text-gray-500" />
+      {/* Other nav items... */}
+      <li>
+        <Link href="/products" className={linkClass}>
+          <Box size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>Products</span>
-        </div>
-        <ul className={dropdownClass}>
-          <li>
-            <Link href="/products/product1" className="block px-4 py-1 text-xs uppercase">
-              Product 1
-            </Link>
-          </li>
-          <li>
-            <Link href="/products/product2" className="block px-4 py-1 text-xs uppercase">
-              Product 2
-            </Link>
-          </li>
-        </ul>
+        </Link>
       </li>
-
       <li>
         <Link href="/resources" className={linkClass}>
-          <Book size={18} className="text-gray-500" />
+          <Book size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>Resources</span>
         </Link>
       </li>
       <li>
         <Link href="/carriers" className={linkClass}>
-          <Briefcase size={18} className="text-gray-500" />
+          <Briefcase size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>Carriers</span>
         </Link>
       </li>
       <li>
         <Link href="/contact-us" className={linkClass}>
-          <Mail size={18} className="text-gray-500" />
+          <Mail size={18} className={isMobile ? "text-blue-300" : "text-gray-500"} />
           <span>Contact</span>
         </Link>
       </li>
