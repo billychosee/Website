@@ -3,13 +3,18 @@ import Head from "next/head";
 import Footer from "./components/Footer";
 import { useState, useRef, useEffect } from "react";
 import { ShieldCheck } from "lucide-react";
-import { MessageCircleMore } from "lucide-react";
 import Image from "next/image";
 import IndustryCard from "./components/IndustryCard";
 import LogoSlider from "./components/LogoSlider";
 import MissionStats from "./components/MissionStats";
 import CustomButton from "./components/CustomButton";
 import ServiceAccordion from './components/ServiceAccordion';
+import { FaStopwatch } from "react-icons/fa";
+import { FaMedal } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
+import { FaBuilding } from "react-icons/fa";
+import { FaShoppingBasket } from "react-icons/fa";
+import { FaSmile } from "react-icons/fa";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -278,7 +283,7 @@ export default function Home() {
   <div className="space-y-14">
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+        <FaStopwatch className="text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">Quick response</h1>
@@ -287,7 +292,7 @@ export default function Home() {
     </div>
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+        <FaMedal className="text-gray-400" size={24} />;
       </div>
       <div>
         <h1 className="text-base font-bold">Experienced</h1>
@@ -298,7 +303,7 @@ export default function Home() {
   <div className="space-y-14">
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+        <FaHandshake className="text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">No geek speak</h1>
@@ -307,7 +312,7 @@ export default function Home() {
     </div>
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+         <FaBuilding className="text-gray-400 mt-1 flex-shrink-0" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">Business savvy</h1>
@@ -318,7 +323,7 @@ export default function Home() {
   <div className="space-y-14">
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+        <FaShoppingBasket className="text-gray-400 mt-1 flex-shrink-0" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">One Stop Shop</h1>
@@ -327,7 +332,7 @@ export default function Home() {
     </div>
     <div className="flex gap-5">
       <div>
-        <MessageCircleMore className="w-6 h-6 text-gray-500 fill-gray-300" />
+        <FaSmile className="text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">100% Satisfaction Guarantee</h1>
@@ -375,143 +380,138 @@ export default function Home() {
 </section>
 
 {/* end of lets get started */}
+<div className="max-w-7xl mx-auto px-6 py-10">
+  <div className="flex items-center my-10">
+    <div className="flex-grow border-t border-gray-400"></div>
+    <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+      OUR SERVICES
+    </span>
+    <div className="flex-grow border-t border-gray-400"></div>
+  </div>
 
-     <div className="max-w-7xl mx-auto px-6 py-10">
-      <div className="flex items-center my-10">
-        <div className="flex-grow border-t border-gray-400"></div>
-        <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
-          OUR SERVICES
-        </span>
-        <div className="flex-grow border-t border-gray-400"></div>
-      </div>
+  {/* IT Consultancy Service */}
+  <ServiceAccordion
+    icon="/consultancy_icon.svg"
+    title="IT Consultancy Service"
+    summary="We make your data useful and easy to use."
+    description="At Smatech Group we offer IT consultancy services that encompass a range of offerings aimed at helping businesses leverage technology effectively to achieve their goals and overcome challenges."
+    services={[
+      {
+        title: "Strategic IT Planning",
+        description: "Develop a comprehensive IT strategy aligned with business goals.",
+        iconName: "FaCogs"
+      },
+      {
+        title: "Digital Transformation",
+        description: "Guide organizations in adopting emerging technologies.",
+        iconName: "FaSyncAlt"
+      },
+      {
+        title: "Data Management",
+        description: "Implement solutions for effective data collection and analysis.",
+        iconName: "FaDatabase"
+      },
+      {
+        title: "Disaster Recovery",
+        description: "Ensure business continuity during disruptive events.",
+        iconName: "FaLifeRing"
+      }
+    ]}
+  />
 
-      {/* IT Consultancy Service */}
-      <ServiceAccordion
-        iconSrc="/consultancy_icon.svg"
-        title="IT Consultancy Service"
-        summary="We make your data useful and easy to use."
-        description="At Smatech Group we offer IT consultancy services that encompass a range of offerings aimed at helping businesses leverage technology effectively to achieve their goals and overcome challenges."
-        services={[
-          {
-            title: "Strategic IT Planning",
-            description: "Develop a comprehensive IT strategy aligned with business goals.",
-            iconSrc: "/shift_icon.svg",
-            iconAlt: "Strategy planning icon"
-          },
-          {
-            title: "Digital Transformation",
-            description: "Guide organizations in adopting emerging technologies.",
-            iconSrc: "/shift_icon.svg",
-            iconAlt: "Digital transformation icon"
-          },
-          {
-            title: "Data Management",
-            description: "Implement solutions for effective data collection and analysis.",
-            iconSrc: "/shift_icon.svg",
-            iconAlt: "Data management icon"
-          },
-          {
-            title: "Disaster Recovery",
-            description: "Ensure business continuity during disruptive events.",
-            iconSrc: "/shift_icon.svg",
-            iconAlt: "Disaster recovery icon"
-          }
-        ]}
-      />
+  {/* Software Development */}
+  <ServiceAccordion
+    icon="/software_dev_icon.svg"
+    title="Software Development"
+    summary="Custom Business solutions."
+    description="We design and develop custom software solutions tailored to your specific business needs, ensuring scalability, security, and optimal performance."
+    learnMoreLink="/software-development"
+    services={[
+      {
+        title: "Web Applications",
+        description: "Custom web solutions for your business needs",
+        iconName: "FaLaptopCode"
+      },
+      {
+        title: "Mobile Apps",
+        description: "iOS and Android applications development",
+        iconName: "FaMobileAlt"
+      },
+      {
+        title: "Enterprise Software",
+        description: "Scalable solutions for large organizations",
+        iconName: "FaServer"
+      },
+      {
+        title: "UI/UX Design",
+        description: "User-centered design for better engagement",
+        iconName: "FaPaintBrush"
+      }
+    ]}
+  />
 
-      {/* Software Development */}
-      <ServiceAccordion
-        iconSrc="/software_dev_icon.svg"
-        title="Software Development"
-        summary="Custom Business solutions."
-        description="We design and develop custom software solutions tailored to your specific business needs, ensuring scalability, security, and optimal performance."
-        learnMoreLink="/software-development"
-        services={[
-          {
-            title: "Web Applications",
-            description: "Custom web solutions for your business needs",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Mobile Apps",
-            description: "iOS and Android applications development",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Enterprise Software",
-            description: "Scalable solutions for large organizations",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "UI/UX Design",
-            description: "User-centered design for better engagement",
-            iconSrc: "/shift_icon.svg"
-          }
-        ]}
-      />
+  {/* Connectivity Voice & Data */}
+  <ServiceAccordion
+    icon="/data_icon.svg"
+    title="Connectivity Voice & Data"
+    summary="Effective communication is the cornerstone of success."
+    description="Our comprehensive voice and data solutions ensure seamless connectivity for your business operations, with reliable infrastructure and cutting-edge technology."
+    learnMoreLink="/connectivity"
+    services={[
+      {
+        title: "Network Infrastructure",
+        description: "Robust networking solutions for businesses",
+        iconName: "FaNetworkWired"
+      },
+      {
+        title: "VoIP Solutions",
+        description: "Cost-effective voice communication systems",
+        iconName: "FaPhoneAlt"
+      },
+      {
+        title: "Cloud Connectivity",
+        description: "Secure and reliable cloud access",
+        iconName: "FaCloud"
+      },
+      {
+        title: "Data Security",
+        description: "Protection for your critical data",
+        iconName: "FaShieldAlt"
+      }
+    ]}
+  />
 
-      {/* Connectivity Voice & Data */}
-      <ServiceAccordion
-        iconSrc="/data_icon.svg"
-        title="Connectivity Voice & Data"
-        summary="Effective communication is the cornerstone of success."
-        description="Our comprehensive voice and data solutions ensure seamless connectivity for your business operations, with reliable infrastructure and cutting-edge technology."
-        learnMoreLink="/connectivity"
-        services={[
-          {
-            title: "Network Infrastructure",
-            description: "Robust networking solutions for businesses",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "VoIP Solutions",
-            description: "Cost-effective voice communication systems",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Cloud Connectivity",
-            description: "Secure and reliable cloud access",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Data Security",
-            description: "Protection for your critical data",
-            iconSrc: "/shift_icon.svg"
-          }
-        ]}
-      />
-
-      {/* IT Support & Maintenance */}
-      <ServiceAccordion
-        iconSrc="/it_support_icon.svg"
-        title="IT Support & Maintenance"
-        summary="Protect your business from cyberattacks."
-        description="Our expert team provides comprehensive IT support and maintenance services to keep your systems running smoothly and securely around the clock."
-        learnMoreLink="/it-support"
-        services={[
-          {
-            title: "24/7 Monitoring",
-            description: "Proactive system monitoring",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Help Desk Support",
-            description: "Immediate technical assistance",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Security Updates",
-            description: "Regular security patches and updates",
-            iconSrc: "/shift_icon.svg"
-          },
-          {
-            title: "Preventive Maintenance",
-            description: "Regular system checkups",
-            iconSrc: "/shift_icon.svg"
-          }
-        ]}
-      />
-    </div>
+  {/* IT Support & Maintenance */}
+  <ServiceAccordion
+    icon="/it_support_icon.svg"
+    title="IT Support & Maintenance"
+    summary="Protect your business from cyberattacks."
+    description="Our expert team provides comprehensive IT support and maintenance services to keep your systems running smoothly and securely around the clock."
+    learnMoreLink="/it-support"
+    services={[
+      {
+        title: "24/7 Monitoring",
+        description: "Proactive system monitoring",
+        iconName: "FaCogs"
+      },
+      {
+        title: "Help Desk Support",
+        description: "Immediate technical assistance",
+        iconName: "FaLifeRing"
+      },
+      {
+        title: "Security Updates",
+        description: "Regular security patches and updates",
+        iconName: "FaShieldAlt"
+      },
+      {
+        title: "Preventive Maintenance",
+        description: "Regular system checkups",
+        iconName: "FaSyncAlt"
+      }
+    ]}
+  />
+</div>
     
 {/* Our Business */}
 
