@@ -222,7 +222,7 @@ const ContactPage = () => {
                     scrolling="no"
                     marginHeight={0}
                     marginWidth={0}
-                    src="https://maps.app.goo.gl/js9L5GThgqoY45gX6"
+                    src="https://maps.google.com/maps?q=13+Brentwood+Ave,+Groombridge,+Harare,+Zimbabwe&output=embed"
                   >
                   </iframe>
                 </div>
