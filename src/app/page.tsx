@@ -15,6 +15,7 @@ import { FaHandshake } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaShoppingBasket } from "react-icons/fa";
 import { FaSmile } from "react-icons/fa";
+import Link from 'next/link';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -98,9 +99,14 @@ export default function Home() {
               >
                 Enabling Tomorrow&apos;s Enterprise Today
               </p>
-              <button className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#8DC440] rounded-full hover:bg-[#03577A] cursor-pointer">
-                Get Started
-              </button>
+<button 
+  onClick={() => {
+    const element = document.getElementById('get-in-touch');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }}
+  className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#8DC440] rounded-full hover:bg-[#03577A] cursor-pointer">
+  Get Started
+</button>
             </div>
             
             {/* Floating image */}
@@ -120,7 +126,7 @@ export default function Home() {
           </div>
         </div>   
  </div>
-<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-64">
+<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-64" id="get-in-touch">
   {/* Column 1 - Image */}
   <div className="flex items-center justify-center w-full md:w-1/3">
     <Image
@@ -141,9 +147,11 @@ export default function Home() {
 
   {/* Column 3 - Button */}
   <div className="flex items-center justify-center w-full md:justify-end md:w-1/3">
-    <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-gray-400">
-      Get in touch
-    </button>
+<Link href="/contact-us">
+  <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-gray-400">
+    Get in touch
+  </button>
+</Link>
   </div>
 </div>
 
@@ -239,7 +247,11 @@ export default function Home() {
     <p className="text-sm lg:text-xs xl:text-sm">
       At Smatech Group, we don&apos;t just provide products; we offer solutions that transform the way you do business.
     </p>
-    <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-[#8DC440] hover:text-black cursor-pointer font-bold">Tell us how we can help</button>
+    <Link href="/contact-us">
+  <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-[#8DC440] hover:text-black cursor-pointer font-bold">
+    Tell us how we can help
+  </button>
+</Link>
     <div className="flex pb-20 space-x-6 md:pb-0">
       <div className="flex items-center space-x-2">
         <ShieldCheck className="w-6 h-6 text-gray-500 fill-gray-300" />

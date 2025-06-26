@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from 'next/link';
 
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "link";
@@ -21,12 +22,14 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   }
 
   return (
-    <button
-      className={`p-5 cursor-pointer ${variantClasses} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
+    <Link href="/contact-us" passHref>
+      <button
+        className={`p-5 cursor-pointer ${variantClasses} ${className}`}
+        {...props}
+      >
+        {children}
+      </button>
+    </Link>
   );
 };
 
