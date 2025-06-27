@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
   faHome,
   faInfoCircle,
   faCog,
@@ -17,8 +17,7 @@ import {
   faBars,
   faTimes,
   faChevronDown,
-  faChevronUp,
-  faMinus
+  faChevronUp
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
@@ -26,6 +25,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [navbarVisible, setNavbarVisible] = useState(true);
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -37,33 +38,52 @@ export default function Navbar() {
     }
   };
 
-  // Close menu when clicking outside
+  // Scroll direction detection
+  useEffect(() => {
+    const handleScroll = () => {
+      if (mobileMenuOpen) return; // Don't hide if mobile menu is open
+      
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px - hide navbar
+        setNavbarVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setNavbarVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, mobileMenuOpen]);
+
+  // Close menu if clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMobileMenuOpen(false);
       }
     };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <nav className="relative z-50 bg-white shadow-md">
+    <nav className={`fixed w-full z-50 bg-white/95 shadow-md backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0 gap-2">
-          <Link href="/" className="block">
+          <Link href="/">
             <Image
               src="/smatech_logo.svg"
               alt="Smatech Logo"
               width={160}
               height={40}
-              className="object-contain"
               priority
+              className="object-contain"
             />
           </Link>
         </div>
@@ -84,17 +104,16 @@ export default function Navbar() {
                 onChange={(e) => setQuery(e.target.value)}
                 className="py-1 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
               />
-              <FontAwesomeIcon 
-                icon={faSearch} 
-                className="absolute left-3 top-1.5 text-gray-500" 
+              <FontAwesomeIcon
+                icon={faSearch}
+                className="absolute left-3 top-1.5 text-gray-500"
                 size="sm"
               />
             </div>
           </form>
-
           <button
-            className="text-gray-700 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-gray-700 md:hidden"
             aria-label="Toggle menu"
           >
             <FontAwesomeIcon icon={faBars} size="lg" />
@@ -102,65 +121,58 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Backdrop */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 transition-opacity duration-300 bg-black bg-opacity-50 md:hidden">
-          {/* Mobile Menu Panel */}
-          <div 
+          <div
             ref={menuRef}
-            className="fixed inset-y-0 right-0 z-50 w-3/4 max-w-sm transition-transform duration-300 ease-in-out transform translate-x-0 bg-white shadow-lg"
+            className="fixed inset-y-0 right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
           >
-            <div className="flex flex-col h-full overflow-y-auto">
-              {/* Header with Logo and Close Button */}
-              <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                <Link href="/" className="block" onClick={() => setMobileMenuOpen(false)}>
-                  <Image
-                    src="/smatech_logo.svg"
-                    alt="Smatech Logo"
-                    width={120}
-                    height={30}
-                    className="object-contain"
-                  />
-                </Link>
-                <button
-                  className="p-2 text-gray-700 bg-gray-100 rounded-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <FontAwesomeIcon icon={faTimes} size="lg" />
-                </button>
-              </div>
-
-              {/* Menu Content */}
-              <div className="flex-1 px-4 py-4">
-                <ul className="flex flex-col gap-4 font-semibold text-black">
-                  <NavLinks 
-                    isMobile 
-                    mobileServicesOpen={mobileServicesOpen}
-                    setMobileServicesOpen={setMobileServicesOpen}
-                    mobileProductsOpen={mobileProductsOpen}
-                    setMobileProductsOpen={setMobileProductsOpen}
-                    closeMenu={() => setMobileMenuOpen(false)}
-                  />
-                  <form onSubmit={handleSearch} className="mt-2">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="Search..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        className="w-full py-2 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
-                      />
-                      <FontAwesomeIcon 
-                        icon={faSearch} 
-                        className="absolute left-3 top-2.5 text-gray-500" 
-                        size="sm"
-                      />
-                    </div>
-                  </form>
-                </ul>
-              </div>
+            {/* Header with logo and close button */}
+            <div className="flex items-center justify-between pb-2 mb-4 border-b">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <Image
+                  src="/smatech_logo.svg"
+                  alt="Smatech Logo"
+                  width={120}
+                  height={30}
+                  className="object-contain"
+                />
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-gray-700 bg-gray-100 rounded-full"
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
             </div>
+
+            <ul className="flex flex-col flex-1 gap-4 font-semibold text-black">
+              <NavLinks
+                isMobile
+                mobileServicesOpen={mobileServicesOpen}
+                setMobileServicesOpen={setMobileServicesOpen}
+                mobileProductsOpen={mobileProductsOpen}
+                setMobileProductsOpen={setMobileProductsOpen}
+                closeMenu={() => setMobileMenuOpen(false)}
+              />
+              <form onSubmit={handleSearch} className="mt-4">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="w-full py-2 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
+                  />
+                  <FontAwesomeIcon
+                    icon={faSearch}
+                    className="absolute left-3 top-2.5 text-gray-500"
+                    size="sm"
+                  />
+                </div>
+              </form>
+            </ul>
           </div>
         </div>
       )}
@@ -168,40 +180,46 @@ export default function Navbar() {
   );
 }
 
-function NavLinks({ 
-  isMobile = false, 
-  mobileServicesOpen = false,
-  setMobileServicesOpen = (value: boolean) => {},
-  mobileProductsOpen = false,
-  setMobileProductsOpen = (value: boolean) => {},
-  closeMenu = () => {}
-}: { 
+type NavLinksProps = {
   isMobile?: boolean;
   mobileServicesOpen?: boolean;
-  setMobileServicesOpen?: (value: boolean) => void;
+  setMobileServicesOpen?: (v: boolean) => void;
   mobileProductsOpen?: boolean;
-  setMobileProductsOpen?: (value: boolean) => void;
+  setMobileProductsOpen?: (v: boolean) => void;
   closeMenu?: () => void;
-}) {
+};
+
+function NavLinks({
+  isMobile = false,
+  mobileServicesOpen = false,
+  setMobileServicesOpen = () => {},
+  mobileProductsOpen = false,
+  setMobileProductsOpen = () => {},
+  closeMenu = () => {},
+}: NavLinksProps) {
   const linkClass = isMobile
-    ? "flex items-center gap-3 text-sm py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
-    : "flex flex-col items-center text-xs uppercase tracking-tight group hover:text-[#8DC440]";
+    ? "flex items-center gap-3 text-sm py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
+    : "flex flex-col items-center text-xs uppercase tracking-tight group hover:text-[#8DC440] relative";
 
-  const iconClass = isMobile 
-    ? "text-gray-500 group-hover:text-[#8DC440]"
-    : "text-gray-500 group-hover:text-[#8DC440]";
+  const iconClass = "text-gray-500 group-hover:text-[#8DC440]";
 
-  const desktopDropdownClass = "absolute hidden group-hover:block bg-navy-blue shadow-lg mt-2 text-black font-normal rounded-md overflow-hidden w-64";
-  const mobileDropdownClass = "ml-6 mt-1 flex flex-col gap-1 border-l-2 border-gray-200 pl-4";
+  const desktopDropdownClass =
+    "absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-0 text-black font-normal w-48 z-50 top-full py-2 transition-all duration-200 ease-out";
+
+  const mobileDropdownClass =
+    "ml-6 mt-1 flex flex-col gap-1 border-l-2 border-gray-200 pl-4";
 
   return (
     <>
+      {/* Home */}
       <li>
         <Link href="/" className={linkClass} onClick={closeMenu}>
           <FontAwesomeIcon icon={faHome} className={iconClass} />
           <span>Home</span>
         </Link>
       </li>
+
+      {/* About Us */}
       <li>
         <Link href="/about-us" className={linkClass} onClick={closeMenu}>
           <FontAwesomeIcon icon={faInfoCircle} className={iconClass} />
@@ -213,62 +231,59 @@ function NavLinks({
       <li className={`relative ${!isMobile ? "group" : ""}`}>
         {isMobile ? (
           <>
-            <button 
+            <button
               className={`${linkClass} w-full justify-between`}
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
             >
               <div className="flex items-center gap-3">
-                <FontAwesomeIcon icon={faCog} className={mobileServicesOpen ? "text-[#8DC440]" : "text-gray-500"} />
-                <span className={mobileServicesOpen ? "text-[#8DC440]" : ""}>Services</span>
+                <FontAwesomeIcon
+                  icon={faCog}
+                  className={mobileServicesOpen ? "text-[#8DC440]" : "text-gray-500"}
+                />
+                <span>Services</span>
               </div>
               {mobileServicesOpen ? (
-                <FontAwesomeIcon icon={faChevronUp} className="text-gray-500" />
+                <FontAwesomeIcon icon={faChevronUp} />
               ) : (
-                <FontAwesomeIcon icon={faChevronDown} className="text-gray-500" />
+                <FontAwesomeIcon icon={faChevronDown} />
               )}
             </button>
             {mobileServicesOpen && (
               <ul className={mobileDropdownClass}>
                 <li>
-                  <Link 
-                    href="/services/it-consulting" 
-                    className="flex items-start py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
+                  <Link
+                    href="/services/it-consulting"
                     onClick={() => {
-                      setMobileServicesOpen(false);
                       closeMenu();
+                      setMobileServicesOpen(false);
                     }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
                   >
-                    <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                      <span>IT Consulting</span>
-                    </div>
+                    IT Consulting
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/services/cloud-solutions" 
-                    className="flex items-start py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
+                  <Link
+                    href="/services/cloud-solutions"
                     onClick={() => {
-                      setMobileServicesOpen(false);
                       closeMenu();
+                      setMobileServicesOpen(false);
                     }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
                   >
-                    <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                      <span>Cloud Solutions</span>
-                    </div>
+                    Cloud Solutions
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/services/cybersecurity" 
-                    className="flex items-start py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
+                  <Link
+                    href="/services/cybersecurity"
                     onClick={() => {
-                      setMobileServicesOpen(false);
                       closeMenu();
+                      setMobileServicesOpen(false);
                     }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
                   >
-                    <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                      <span>Cybersecurity</span>
-                    </div>
+                    Cybersecurity
                   </Link>
                 </li>
               </ul>
@@ -282,33 +297,27 @@ function NavLinks({
             </Link>
             <ul className={desktopDropdownClass}>
               <li>
-                <Link 
-                  href="/services/it-consulting" 
-                  className="flex items-start px-4 py-3 transition-colors hover:bg-blue-800"
+                <Link
+                  href="/services/it-consulting"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
                 >
-                  <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-3 before:inline-block">
-                    <span>IT Consulting</span>
-                  </div>
+                  IT Consulting
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/services/cloud-solutions" 
-                  className="flex items-start px-4 py-3 transition-colors hover:bg-blue-800"
+                <Link
+                  href="/services/cloud-solutions"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
                 >
-                  <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-3 before:inline-block">
-                    <span>Cloud Solutions</span>
-                  </div>
+                  Cloud Solutions
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/services/cybersecurity" 
-                  className="flex items-start px-4 py-3 transition-colors hover:bg-blue-800"
+                <Link
+                  href="/services/cybersecurity"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
                 >
-                  <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-3 before:inline-block">
-                    <span>Cybersecurity</span>
-                  </div>
+                  Cybersecurity
                 </Link>
               </li>
             </ul>
@@ -317,90 +326,127 @@ function NavLinks({
       </li>
 
       {/* Products Dropdown */}
-{/* Products Dropdown */}
-<li className={`relative ${!isMobile ? "group" : ""}`}>
-  {isMobile ? (
-    <>
-      <button 
-        className={`${linkClass} w-full justify-between`}
-        onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-      >
-        <div className="flex items-center gap-3">
-          <FontAwesomeIcon icon={faBoxOpen} className={mobileProductsOpen ? "text-[#8DC440]" : "text-gray-500"} />
-          <span className={mobileProductsOpen ? "text-[#8DC440]" : ""}>Products</span>
-        </div>
-        {mobileProductsOpen ? (
-          <FontAwesomeIcon icon={faChevronUp} className="text-gray-500" />
-        ) : (
-          <FontAwesomeIcon icon={faChevronDown} className="text-gray-500" />
-        )}
-      </button>
-      {mobileProductsOpen && (
-        <ul className={mobileDropdownClass}>
-          <li>
-            <Link 
-              href="/products/smat-qr" 
-              className="flex items-start py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
-              onClick={() => {
-                setMobileProductsOpen(false);
-                closeMenu();
-              }}
+      <li className={`relative ${!isMobile ? "group" : ""}`}>
+        {isMobile ? (
+          <>
+            <button
+              className={`${linkClass} w-full justify-between`}
+              onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+              aria-expanded={mobileProductsOpen}
             >
-              <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                <span>Smat QR</span>
+              <div className="flex items-center gap-3">
+                <FontAwesomeIcon
+                  icon={faBoxOpen}
+                  className={mobileProductsOpen ? "text-[#8DC440]" : "text-gray-500"}
+                />
+                <span>Products</span>
               </div>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              href="/products/hardware" 
-              className="flex items-start py-2 px-3 hover:bg-gray-100 rounded transition-colors hover:text-[#8DC440]"
-              onClick={() => {
-                setMobileProductsOpen(false);
-                closeMenu();
-              }}
-            >
-              <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-                <span>Hardware Products</span>
-              </div>
-            </Link>
-          </li>
-        </ul>
-      )}
-    </>
-  ) : (
-    <>
-      <Link href="/products" className={linkClass}>
-        <FontAwesomeIcon icon={faBoxOpen} className={iconClass} />
-        <span>Products</span>
-      </Link>
-      <ul className={desktopDropdownClass}>
-        <li>
-          <Link 
-            href="/products/smat-qr" 
-            className="flex items-start px-4 py-3 transition-colors hover:bg-blue-800"
-          >
-            <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-3 before:inline-block">
-              <span>Smat QR</span>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link 
-            href="/products/hardware" 
-            className="flex items-start px-4 py-3 transition-colors hover:bg-blue-800"
-          >
-            <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-3 before:inline-block">
-              <span>Hardware Products</span>
-            </div>
-          </Link>
-        </li>
-      </ul>
-    </>
-  )}
-</li>
+              <FontAwesomeIcon 
+                icon={mobileProductsOpen ? faChevronUp : faChevronDown} 
+              />
+            </button>
 
-      {/* Other nav items... */}
+            {/* Mobile Dropdown Menu */}
+            {mobileProductsOpen && (
+              <ul className={mobileDropdownClass}>
+                <li>
+                  <Link
+                    href="/products/smat-qr"
+                    onClick={() => {
+                      closeMenu();
+                      setMobileProductsOpen(false);
+                    }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                  >
+                    Smat QR
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products/smat-prop"
+                    onClick={() => {
+                      closeMenu();
+                      setMobileProductsOpen(false);
+                    }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                  >
+                    Smat Prop
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products/njere-erp"
+                    onClick={() => {
+                      closeMenu();
+                      setMobileProductsOpen(false);
+                    }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                  >
+                    Njere ERP
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products/smat-pay"
+                    onClick={() => {
+                      closeMenu();
+                      setMobileProductsOpen(false);
+                    }}
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                  >
+                    SmatPay
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </>
+        ) : (
+          <>
+            <Link href="/products" className={linkClass}>
+              <FontAwesomeIcon icon={faBoxOpen} className={iconClass} />
+              <span>Products</span>
+            </Link>
+
+            {/* Desktop Dropdown Menu */}
+            <ul className={desktopDropdownClass}>
+              <li>
+                <Link
+                  href="/products/smat-qr"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
+                >
+                  Smat QR
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/smat-prop"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
+                >
+                  Smat Prop
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/njere-erp"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
+                >
+                  Njere ERP
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/smat-pay"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#8DC440] transition-colors"
+                >
+                  SmatPay
+                </Link>
+              </li>
+            </ul>
+          </>
+        )}
+      </li>
+
+      {/* Other Links */}
       <li>
         <Link href="/resources" className={linkClass} onClick={closeMenu}>
           <FontAwesomeIcon icon={faBook} className={iconClass} />
@@ -408,10 +454,16 @@ function NavLinks({
         </Link>
       </li>
       <li>
-        <Link href="/carriers" className={linkClass} onClick={closeMenu}>
+        <a 
+          href="https://erp.smatechgroup.com/recruitment/recruitment_portal" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+          onClick={closeMenu}
+        >
           <FontAwesomeIcon icon={faBriefcase} className={iconClass} />
           <span>Carriers</span>
-        </Link>
+        </a>
       </li>
       <li>
         <Link href="/contact-us" className={linkClass} onClick={closeMenu}>

@@ -65,7 +65,7 @@ export default function Home() {
           name="description"
           content="SmaTech provides cutting-edge technology solutions to grow your business."
         />
-        <meta name="keywords" content="technology, IT solutions, software, innovation" />
+        <meta name="keywords" content="technology, IT solutions, software, innovation, Harare, Zimbabwe, " />
         <meta name="author" content="SmaTech" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -167,10 +167,10 @@ export default function Home() {
   {/* Left column */}
   <div className="md:w-1/2">
     <h4 className="text-sm font-semibold text-[#8DC440] uppercase tracking-wide mb-4">
-      Industries
+     Industries We Serve
     </h4>
     <h2 className="mb-4 text-3xl font-extrabold leading-snug md:text-4xl lg:text-xl">
-      We've helped companies, building strong relationships with top–notch assistance.
+     We support organizations across industries with scalable IT and enterprise solutions — from ERP platforms and FinTech systems to EdTech, PropTech, and InsurTech innovations. Our tailored approach ensures long-term partnerships and measurable digital transformation..
     </h2>
   </div>
 
