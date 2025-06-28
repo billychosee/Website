@@ -21,8 +21,9 @@ import {
   FaFlag
 } from 'react-icons/fa';
 import { ImageTextListSection } from '../components/ImageTextListSection';
-import HorizontalFooterAccordion from '../components/HorizontalFooterAccordion'
+import HorizontalFooterAccordion from '../components/HorizontalFooterAccordion';
 import { ImageTextListSectionReverse } from '../components/ImageTextListSectionReverse';
+import Footer from '../components/Footer';
 
 export default function SmatPropPage() {
   
@@ -66,7 +67,7 @@ export default function SmatPropPage() {
       <div className="relative px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/smat_prop_bg.svg"
+            src="/smat_prop_bg.png"
             alt="Services background"
             fill
             className="object-cover"
@@ -87,7 +88,7 @@ export default function SmatPropPage() {
             </div>
             <h1 className="text-[#8DC440] text-sm lg:text-2xl font-bold">Our Products</h1>
           </div>
-          <h2 className="text-3xl font-bold text-white lg:text-5xl">Smat Property Management</h2>
+          <h2 className="text-3xl font-bold text-white lg:text-5xl">Smat Prop</h2>
           <p className="text-base text-white">
             A trusted platform to retrieve rental credit behavior of tenants and <br /> identifying delinquent tenants.
           </p>
@@ -277,6 +278,8 @@ export default function SmatPropPage() {
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

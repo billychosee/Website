@@ -130,7 +130,7 @@ export default function Home() {
   {/* Column 1 - Image */}
   <div className="flex items-center justify-center w-full md:w-1/3">
     <Image
-      src="/faces_get_in_touch.svg"
+      src="/faces_get_in_touch.png"
       alt="faces"
       width={160}
       height={0}
@@ -170,7 +170,7 @@ export default function Home() {
      Industries We Serve
     </h4>
     <h2 className="mb-4 text-3xl font-extrabold leading-snug md:text-4xl lg:text-xl">
-     We support organizations across industries with scalable IT and enterprise solutions — from ERP platforms and FinTech systems to EdTech, PropTech, and InsurTech innovations. Our tailored approach ensures long-term partnerships and measurable digital transformation..
+     Empowering organizations with scalable IT and enterprise-grade solutions — built for long-term impact and measurable transformation.
     </h2>
   </div>
 

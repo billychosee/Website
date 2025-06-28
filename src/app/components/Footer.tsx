@@ -31,8 +31,7 @@ export default function Footer() {
           quality={90}
           priority
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-60" />
+
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -77,7 +76,7 @@ export default function Footer() {
             <h2 className="mb-4 text-xl font-bold">Get in Touch</h2>
             <form
               onSubmit={handleSubmit}
-              className="w-full max-w-md space-y-3 text-black"
+              className="w-full max-w-md space-y-3 text-white"
             >
               <input
                 type="email"

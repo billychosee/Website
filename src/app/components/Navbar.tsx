@@ -72,7 +72,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 bg-white/95 shadow-md backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed w-full z-50 ${mobileMenuOpen ? 'bg-white' : 'bg-white/95'} shadow-md backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+
       <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0 gap-2">
@@ -123,11 +124,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 transition-opacity duration-300 bg-black bg-opacity-50 md:hidden">
-          <div
-            ref={menuRef}
-            className="fixed inset-y-0 right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
-          >
+<div className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden">
+  {/* MOBILE MENU */}
+  <div
+    ref={menuRef}
+    className="fixed inset-y-0 right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
+  >
             {/* Header with logo and close button */}
             <div className="flex items-center justify-between pb-2 mb-4 border-b">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>

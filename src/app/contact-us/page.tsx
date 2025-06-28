@@ -25,7 +25,7 @@ const ContactPage = () => {
 
             <div className="w-full">
               <Image 
-                src="/talk_to_us_lady.svg"
+                src="/talk_to_us_lady.png"
                 alt="Contact us lady"
                 width={500}
                 height={400}

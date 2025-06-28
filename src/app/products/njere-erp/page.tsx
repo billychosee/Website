@@ -33,7 +33,7 @@ export default function NjereERP() {
       <div className="relative px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/njere_bg.svg"
+            src="/njere_bg.png"
             alt="Njere Background"
             fill
             className="object-cover"
@@ -62,8 +62,8 @@ export default function NjereERP() {
       </div>
 
       {/* Njere Website Image Section */}
-      <div className="w-full px-6 py-12 md:px-14">
-        <div className="relative w-full h-[500px]">
+      <div className="w-full px-6 py-0 md:px-14">
+        <div className="relative w-full h-[200px] md:h-[500px]">
           <Image
             src="/njere_website.svg"
             alt="Njere Website"
@@ -224,7 +224,7 @@ export default function NjereERP() {
 </section>
 
 {/* feature Section */}
-<div className="container flex flex-col items-center gap-8 px-6 py-16 mx-auto md:flex-row md:py-24">
+<div className="container flex flex-col items-center gap-8 px-6 py-16 mx-auto md:flex-row md:py-14">
 
   <div className="pb-4 space-y-4 md:w-1/2 ">
     <h2 className="text-xl font-bold text-gray-800">Smatedu is intergrated with an open-source web conferencing system designed for online learning and collaboration.</h2>
