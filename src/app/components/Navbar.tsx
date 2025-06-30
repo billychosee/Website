@@ -41,7 +41,7 @@ export default function Navbar() {
   // Scroll direction detection
   useEffect(() => {
     const handleScroll = () => {
-      if (mobileMenuOpen) return; // Don't hide if mobile menu is open
+      if (mobileMenuOpen) return;
       
       const currentScrollY = window.scrollY;
       
@@ -74,7 +74,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed w-full z-50 ${mobileMenuOpen ? 'bg-white' : 'bg-white/95'} shadow-md backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
 
-      <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between px-4 py-3 md:px-24 xl:px-24 lg:px-8">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0 gap-2">
           <Link href="/">
@@ -103,7 +103,7 @@ export default function Navbar() {
                 placeholder="Search..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="py-1 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-green"
+                className="py-1 pl-10 pr-4 text-sm text-black bg-gray-100 rounded-full xl:pr-4 lg:pr-0 focus:outline-none focus:ring-2 focus:ring-custom-green"
               />
               <FontAwesomeIcon
                 icon={faSearch}
@@ -124,11 +124,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-<div className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden">
+<div className="fixed inset-0 z-40 bg-white md:hidden">
   {/* MOBILE MENU */}
   <div
     ref={menuRef}
-    className="fixed inset-y-0 right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
+    className="fixed right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
   >
             {/* Header with logo and close button */}
             <div className="flex items-center justify-between pb-2 mb-4 border-b">
@@ -209,7 +209,7 @@ function NavLinks({
     "absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-0 text-black font-normal w-48 z-50 top-full py-2 transition-all duration-200 ease-out";
 
   const mobileDropdownClass =
-    "ml-6 mt-1 flex flex-col gap-1 border-l-2 border-gray-200 pl-4";
+    "ml-6 mt-1 flex flex-col gap-1 border-l-2 border-[#8DC440] pl-4";
 
   return (
     <>
@@ -259,7 +259,7 @@ function NavLinks({
                       closeMenu();
                       setMobileServicesOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] text-sm"
                   >
                     IT Consulting
                   </Link>
@@ -271,7 +271,7 @@ function NavLinks({
                       closeMenu();
                       setMobileServicesOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] text-sm"
                   >
                     Cloud Solutions
                   </Link>
@@ -283,7 +283,7 @@ function NavLinks({
                       closeMenu();
                       setMobileServicesOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440]"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] text-sm"
                   >
                     Cybersecurity
                   </Link>
@@ -358,7 +358,7 @@ function NavLinks({
                       closeMenu();
                       setMobileProductsOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors text-sm"
                   >
                     Smat QR
                   </Link>
@@ -370,7 +370,7 @@ function NavLinks({
                       closeMenu();
                       setMobileProductsOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors text-sm"
                   >
                     Smat Prop
                   </Link>
@@ -382,7 +382,7 @@ function NavLinks({
                       closeMenu();
                       setMobileProductsOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors text-sm"
                   >
                     Njere ERP
                   </Link>
@@ -394,7 +394,7 @@ function NavLinks({
                       closeMenu();
                       setMobileProductsOpen(false);
                     }}
-                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors"
+                    className="py-2 px-3 hover:bg-gray-100 rounded hover:text-[#8DC440] transition-colors text-sm"
                   >
                     SmatPay
                   </Link>

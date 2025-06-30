@@ -26,11 +26,11 @@ export default function NjereERP() {
     <div className="min-h-screen bg-gray-50">
       <Head>
         <title>Njere School Management System | Smatech Group</title>
-        <meta name="description" content="SmatProp - Smart property and tenant management solutions" />
+        <meta name="description" content="Njere is a comprehensive and innovative school management ERP System" />
       </Head>
 
       {/* Hero Header */}
-      <div className="relative px-6 py-32 text-left md:px-24">
+      <div className="relative flex flex-col justify-center h-screen px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="/njere_bg.png"

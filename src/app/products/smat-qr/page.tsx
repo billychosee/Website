@@ -43,7 +43,7 @@ export default function SmatQr() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-14">
       <Head>
         <title>Smat Qr | Smatech Group</title>
         <meta name="description" content="SmatProp - Smart property and tenant management solutions" />
@@ -53,8 +53,8 @@ export default function SmatQr() {
       <div className="relative px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/smat_qr_bg.svg"
-            alt="Services background"
+            src="/smat_qr_bg.png"
+            alt="Smat Qr Background"
             fill
             className="object-cover"
             priority
@@ -76,7 +76,7 @@ export default function SmatQr() {
           </div>
           <h2 className="text-3xl font-bold text-white lg:text-5xl">SmatQR</h2>
           <p className="text-base text-white">
-            A trusted platform for screening tenants, managing leases, and improving rental property operations.
+            A trusted platform for screening tenants, managing leases, <br />and improving rental property operations.
           </p>
         </div>
       </div>

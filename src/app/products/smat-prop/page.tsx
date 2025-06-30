@@ -57,7 +57,7 @@ export default function SmatPropPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-14">
       <Head>
         <title>SmatProp | Smatech Group</title>
         <meta name="description" content="SmatProp - Smart property and tenant management solutions" />

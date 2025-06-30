@@ -59,7 +59,7 @@ export default function ServiceAccordion({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 py-10">
+    <div className="py-10 border-b border-gray-200">
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -70,13 +70,13 @@ export default function ServiceAccordion({
             alt="Service icon"
             width={40}
             height={40}
-            className="w-10 h-10"
+            className="w-10 h-10 xl:w-10 xl:h-10 lg:w-5 lg:h-5"
           />
           <div className="flex justify-center align-middle">
-            <h3 className="font-semibold md:text-2xl text-[#4A90A4] text-xs">
+            <h3 className="font-semibold xl:text-2xl text-[#4A90A4] text-xs lg:text-sm">
               {title}
             </h3>
-            <p className="text-gray-500 md:text-2xl pl-2 text-xs">{summary}</p>
+            <p className="pl-2 text-xs text-gray-500 xl:text-2xl lg:text-sm">{summary}</p>
           </div>
         </div>
         <div>{isOpen ? <X className="text-gray-400" /> : <Plus className="text-gray-400" />}</div>
@@ -84,7 +84,7 @@ export default function ServiceAccordion({
 
       {isOpen && (
         <div className="mt-6 pl-14 animate-fadeIn">
-          <p className="text-gray-700 mb-6">
+          <p className="mb-6 text-gray-700">
             {description}{' '}
             {learnMoreLink && (
               <a href={learnMoreLink} className="text-blue-600 hover:underline">
@@ -93,19 +93,19 @@ export default function ServiceAccordion({
             )}
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {services.map((service, index) => {
               const Icon = FontAwesomeIcons[service.iconName];
               return (
                 <div key={index} className="flex items-start gap-3 pl-1">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
                       {Icon && <Icon className="w-6 h-6 text-[#8DC440]" />}
                     </div>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">{service.title}</h4>
-                    <p className="text-sm text-gray-600 mt-1">{service.description}</p>
+                    <p className="mt-1 text-sm text-gray-600">{service.description}</p>
                   </div>
                 </div>
               );

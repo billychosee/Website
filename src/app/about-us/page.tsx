@@ -27,7 +27,7 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <section className="bg-white">
+    <section className="bg-white pt-14">
 {/* Hero Section */}
 <section className="relative overflow-hidden">
   {/* Interactive gradient background */}
@@ -44,12 +44,12 @@ export default function AboutUs() {
   
   <div className="px-6 py-16 md:px-24 bg-[#F9FAFB]/90 text-gray-800 relative z-10">
     <div className="max-w-5xl mx-auto space-y-8 text-center">
-      <h1 className="font-bold md:text-[86px] text-5xl">Hello Everybody</h1>
-      <p className="text-xl">
+      <h1 className="font-bold text-5xl lg:text-6xl xl:[86px]">Hello Everybody</h1>
+      <p className="text-xl xl:text-xl lg:text-base">
         We at Smatech Group and we believe that human, organizational, and <br />
         operational intelligence are important, not just artificial intelligence.
       </p>
-      <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5">
+      <CustomButton variant="primary" className="bg-[#8DC440] text-black mt-5">
         Speak to an Expert
       </CustomButton>
       <CustomButton variant="link" className="mt-5 font-bold text-black">
@@ -59,7 +59,7 @@ export default function AboutUs() {
   </div>
 
   {/* Hero Image */}
-  <div className="px-5 py-10 text-center md:px-24 md:pb-20 relative z-10">
+  <div className="relative z-10 px-5 py-10 text-center md:px-24 md:pb-20 bg-gradient-to-t from-[#E8F7FD] to-white">
     <Image
       src="/about_hero_bg.png"
       alt="hero-bg"
@@ -95,39 +95,42 @@ export default function AboutUs() {
 
 
       {/* Divider */}
-      <div className="h-2 mx-5 bg-black md:mx-24"></div>
+      <div className="bg-[#E8F7FD]">
+        <div className="h-2 mx-5 bg-black md:mx-24"></div>
+      </div>
+      
 
       {/* Company Profile */}
-      <div className="flex gap-5 pt-20 mx-5 text-black md:mx-24 md:flex-row flex-col text-center md:text-start space-y-6 md:space-y-14" id="company-stats">
+      <div className="flex flex-col gap-5 pt-20 px-5 space-y-6 text-center text-black md:px-24 md:flex-row md:text-start md:space-y-14 bg-[#E8F7FD] pb-20 md:pb-0" id="company-stats">
         <div className="md:w-2/5">
           <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Company Profile-Key Facts</p>
-          <h1 className="pt-5 text-2xl font-bold">The energy of a start-up A well-established expertise.</h1>
+          <h1 className="pt-5 text-2xl font-bold lg:text-xl xl:text-2xl">The energy of a start-up A well-established expertise.</h1>
         </div>
         <div className="md:w-1/5">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-4xl font-bold lg:text-3xl lg: xl:text-6xl">
             {startCount ? <CountUp end={30} duration={3} /> : "0"}
           </h1>
-          <p>Developed over 30 custom business solutions</p>
+          <p className="text-sm lg:text-xs xl:text-sm">Developed over 30 custom business solutions</p>
         </div>
         <div className="md:w-1/5">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-4xl font-bold lg:text-3xl lg: xl:text-6xl">
             {startCount ? <CountUp end={15} duration={3} /> : "0"}
           </h1>
-          <p>Experience in over 15 programming languages and frameworks</p>
+          <p className="text-sm lg:text-xs xl:text-sm">Experience in over 15 programming languages and frameworks</p>
         </div>
         <div className="md:w-1/5">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-4xl font-bold lg:text-3xl lg: xl:text-6xl">
             {startCount ? <CountUp end={46} duration={3} /> : "0"}
           </h1>
-          <p>Trusted by over 30 Brands Across Africa</p>
+          <p className="text-sm lg:text-xs xl:text-sm">Trusted by over 30 Brands Across Africa</p>
         </div>
       </div>
 
       {/* What We Do */}
-    <section className="flex flex-col-reverse md:flex-row min-h-screen py-24 mx-5 text-black md:min-h-full lg:min-h-screen md:mx-24">
+    <section className="flex flex-col-reverse py-24 mx-5 text-black md:flex-row md:mx-24">
 
         <div className="flex flex-col justify-center md:w-1/2">
-          <div className="text-center md:text-start pt-6 md:pt-0">
+          <div className="pt-6 text-center md:text-start md:pt-0">
             <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">What we do</p>
             <h1 className="pt-5 text-2xl font-bold">We will help you overcome your technology challenges</h1>
           </div>
@@ -141,11 +144,11 @@ export default function AboutUs() {
               are the cornerstones of success...
             </p>
           </div>
-          <div className="flex pt-5 text-sm lg:text-xs md:flex-row flex-col">
-            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-0 text-sm lg:text-xs lg:px-10 lg:mt-0 xl:mt-10 lg:py-1 py-5 xl:text-sm">
+          <div className="flex flex-col pt-5 text-sm text-center md:pt-10 lg:text-xs md:flex-row">
+            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold text-sm lg:text-xs xl:text-sm">
               Speak to an Expert
             </CustomButton>
-            <CustomButton variant="link" className="px-5 py-2 mt-5 text-sm font-bold text-black lg:text-xs lg:px-10 lg:mt-0 xl:mt-10 lg:py-1 xl:px-14 xl:text-sm xl:py-5">
+            <CustomButton variant="link" className="px-5 text-xs">
               Learn more about services
             </CustomButton>
           </div>
@@ -193,7 +196,7 @@ export default function AboutUs() {
   {/* Map with flickering Zimbabwe marker */}
   <div className="relative md:w-1/2">
     <Image
-      src="/world-map-grid-background.svg"
+      src="/world-map-grid-background.png"
       alt="What_We_Do"
       width={800}
       height={600}
@@ -219,7 +222,7 @@ export default function AboutUs() {
   </div>
 
   {/* Text and Buttons */}
-  <div className="md:w-1/2 space-y-10">
+  <div className="space-y-10 md:w-1/2">
     <div>
       <p className="text-sm font-semibold text-[#8DC440] whitespace-nowrap">Locations</p>
       <h1 className="pt-5 text-2xl font-bold">We are growing our presence in the African region.</h1>
@@ -234,11 +237,11 @@ export default function AboutUs() {
       </div>
     </div>
 
-    <div>
-      <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold px-5 xl:px-14 mt-5 w-full md:w-1/2">
+    <div className="flex flex-col justify-center text-center md:flex-row">
+      <CustomButton variant="primary" className="bg-[#8DC440] text-black">
         Speak to an Expert
       </CustomButton>
-      <CustomButton variant="link" className="mt-5 font-bold text-black w-full md:w-1/2">
+      <CustomButton variant="link" className="font-bold text-black ">
         Learn more about services
       </CustomButton>
     </div>

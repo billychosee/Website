@@ -2,23 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import {
   FaHome,
-  FaUsers,
   FaMoneyCheckAlt,
   FaTools,
   FaRegFileAlt,
   FaShieldAlt,
-  FaCommentDots,
   FaGlobe,
   FaDollarSign,
-  FaClock,
   FaChartLine,
-  FaHeart,
   FaCreditCard,
   FaListAlt,
   FaFileContract,
   FaBell,
   FaWrench,
-  FaFlag
 } from 'react-icons/fa';
 import { ImageTextListSection } from '../components/ImageTextListSection';
 import HorizontalFooterAccordion from '../components/HorizontalFooterAccordion';
@@ -30,7 +25,7 @@ export default function SmatPropPage() {
   const targetMarketImages = [
     { src: '/restaurant.jpg', alt: 'Restaurant', caption: 'Restaurants' },
     { src: '/coffee.jpg', alt: 'Coffee Shops', caption: 'Coffee Shops' },
-    { src: '/restaurant_1.svg', alt: 'Cafes', caption: 'Cafes' },
+    { src: '/restaurant_1.png', alt: 'Cafes', caption: 'Cafes' },
   ]
 
   const ImageCard = ({
@@ -57,7 +52,7 @@ export default function SmatPropPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-14">
       <Head>
         <title>SmatProp | Smatech Group</title>
         <meta name="description" content="SmatProp - Smart property and tenant management solutions" />

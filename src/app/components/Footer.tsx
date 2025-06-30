@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaPhoneAlt, } from "react-icons/fa";
+import { BsFillBuildingFill, BsMailbox2 } from "react-icons/bs";
+
 
 export default function Footer() {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -24,7 +27,7 @@ export default function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/abstract-plexus-blue-geometrical-shapes.jpg"
+          src="/footer_bg.png"
           alt="Footer Background"
           fill
           className="object-cover"
@@ -34,7 +37,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 px-0 md:mx-24">
         {/* Logo */}
         <div className="flex justify-center mb-10">
           <Link href="/">
@@ -53,8 +56,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
           {/* Column 1: Quick Links */}
           <div>
-            <h2 className="mb-4 text-xl font-bold">Our Company</h2>
-            <ul className="space-y-2">
+            <h2 className="mb-4 text-xl font-bold lg:text-sm xl:text-base" >Our Company</h2>
+            <ul className="space-y-2 text-xl lg:text-sm xl:text-base">
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
               <li><Link href="/services" className="hover:underline">Services</Link></li>
               <li><Link href="/products" className="hover:underline">Products</Link></li>
@@ -63,17 +66,33 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Contact Info */}
-          <div>
-            <h2 className="mb-4 text-xl font-bold">Contact Info</h2>
-            <p className="mb-1">📞 +27 10 786 0259</p>
-            <p className="mb-1">📞 +263 78 956 6427</p>
-            <p className="mb-1">✉️ info@smatech.com</p>
-            <p>🏢 Your Company Address</p>
+          <div className="flex flex-col items-center text-xl md:items-start lg:text-sm xl:text-base">
+            <h2 className="items-center justify-center mb-4 font-bold">Contact Info</h2>
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
+              <p>+27 10 786 0259</p>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
+              <p>+27 10 786 0259</p>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <BsMailbox2 className="text-[#8DC440] w-4 h-4" />
+              <p>info@smatech.com</p>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <BsFillBuildingFill className="text-[#8DC440] w-4 h-4" />
+              <p>13 Brentwood, Avenue, Harare, Zimbabwe</p>
+            </div>
+            
           </div>
 
           {/* Column 3: Contact Form */}
-          <div className="flex flex-col items-center md:items-end">
-            <h2 className="mb-4 text-xl font-bold">Get in Touch</h2>
+          <div className="flex flex-col items-center text-xl md:items-end lg:text-sm xl:text-base">
+            <h2 className="mb-4 font-bold">Get in Touch</h2>
             <form
               onSubmit={handleSubmit}
               className="w-full max-w-md space-y-3 text-white"

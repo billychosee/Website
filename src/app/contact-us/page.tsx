@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 const ContactPage = () => {
   return (
-    <section className='text-black bg-white'>
+    <section className='text-black bg-white pt-14'>
       <div className="px-4 py-6 md:py-14 md:px-24">
         <div className="flex flex-col gap-8 md:flex-row">
           {/* Left Column - Content */}

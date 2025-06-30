@@ -60,21 +60,19 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SmaTech - Innovative Tech Solutions</title>
+        <title>SmaTech Group - Innovative Tech Solutions</title>
         <meta
           name="description"
           content="SmaTech provides cutting-edge technology solutions to grow your business."
         />
-        <meta name="keywords" content="technology, IT solutions, software, innovation, Harare, Zimbabwe, " />
-        <meta name="author" content="SmaTech" />
+        <meta name="keywords" content="technology, IT solutions, software, innovation, Harare, Zimbabwe, Africa " />
+        <meta name="author" content="SmaTech Group" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="bg-white"
-      
-      >
+      <main className="bg-white">
         <div   ref={heroRef}
-        className="relative flex items-center justify-center min-h-screen px-6 py-12 overflow-hidden bg-gradient-to-t from-[#E8F7FD] to-white md:min-h-full lg:min-h-screen">
+        className="relative flex items-center justify-center min-h-screen px-6 py-24 overflow-hidden bg-gradient-to-t from-[#E8F7FD] to-white md:min-h-full lg:min-h-screen">
           
        
         {/* Background image */}
@@ -90,43 +88,39 @@ export default function Home() {
             {/* Text content */}
             <div className="mb-10 text-center md:w-1/2 md:mb-0 md:text-left">
               <h1 
-                className={`text-5xl md:text-6xl font-bold mb-6 transition-all duration-1000 ease-in-out text-black ${isHovering ? 'transform rotate-1 scale-105' : ''}`}
+                className={`text-5xl xl:text-6xl lg:text-5xl font-bold mb-6 transition-all duration-1000 ease-in-out text-black ${isHovering ? 'transform rotate-1 scale-105' : ''}`}
               >
                 Most Trusted Technology Service
               </h1>
               <p 
-                className={`text-xl md:text-2xl mb-8 transition-all duration-1000 ease-in-out text-[black] ${isHovering ? 'transform -rotate-1 scale-105' : ''}`}
+                className={`text-xl md:text-2xl xl:text-2xl lg:text-xl mb-8 transition-all duration-1000 ease-in-out text-[black] ${isHovering ? 'transform -rotate-1 scale-105' : ''}`}
               >
                 Enabling Tomorrow&apos;s Enterprise Today
               </p>
-<button 
-  onClick={() => {
-    const element = document.getElementById('get-in-touch');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  }}
-  className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#8DC440] rounded-full hover:bg-[#03577A] cursor-pointer">
-  Get Started
-</button>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('get-in-touch');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#8DC440] rounded-full hover:bg-[#03577A] cursor-pointer">
+                Get Started
+              </button>
             </div>
             
             {/* Floating image */}
-            <div 
-              className="relative md:w-1/2"
-              style={imageStyle}
-            >
-  <Image
-  src="/hero.jpg"
-  alt="SmaTech Group"
-  width={800} 
-  height={600} 
-  className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
-  priority
-/>
+            <div className="relative md:w-1/2" style={imageStyle}>
+              <Image
+              src="/hero.jpg"
+              alt="SmaTech Group"
+              width={800} 
+              height={600} 
+              className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
+              priority />
             </div>
           </div>
         </div>   
  </div>
-<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-64" id="get-in-touch">
+<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-20 xl:px-64" id="get-in-touch">
   {/* Column 1 - Image */}
   <div className="flex items-center justify-center w-full md:w-1/3">
     <Image
@@ -389,7 +383,7 @@ export default function Home() {
 
 {/* end of lets get started */}
 
-<div className="px-6 py-10 mx-auto max-w-7xl">
+<div className="px-6 py-10 md:px-24">
   <div className="flex items-center my-10">
     <div className="flex-grow border-t border-gray-400"></div>
     <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">

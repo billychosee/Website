@@ -11,22 +11,13 @@ import {
   FaLink,
   FaPlug,
   FaShareAlt,
-  FaSync,
   FaLock,
   FaCalendarAlt,
   FaUsers,
-  FaMoneyCheckAlt,
-  FaFileContract,
-  FaListAlt,
-  FaDollarSign,
-  FaChartLine,
-  FaWrench,
-  FaHome,
-  FaRegFileAlt,
-  FaTools,
-  FaBell
+
 } from "react-icons/fa";
 import HorizontalFooterAccordion from '@/app/components/HorizontalFooterAccordion';
+import CustomButton from '@/app/components/CustomButton';
 
 export default function SmatPay() {
   return (
@@ -37,7 +28,7 @@ export default function SmatPay() {
       </Head>
 
       {/* Hero Header */}
-      <div className="relative px-6 py-32 text-left md:px-24">
+      <div className="relative flex flex-col justify-center h-screen px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="/smat_pay_bg.png"
@@ -63,7 +54,7 @@ export default function SmatPay() {
           </div>
           <h2 className="text-3xl font-bold text-white lg:text-5xl">SmatPay</h2>
           <p className="text-base text-white">
-            Transforming the future of payments in Zimbabwe with secure, flexible, and efficient payment solutions for businesses of all sizes.
+            Transforming the future of payments in Zimbabwe with secure, flexible, and <br />efficient payment solutions for businesses of all sizes.
           </p>
         </div>
       </div>
@@ -81,92 +72,8 @@ export default function SmatPay() {
         </div>
       </div>
 
-      {/* Register Section */}
-      <div className="container px-6 py-16 mx-auto text-center">
-        <h2 className="mb-6 text-3xl font-bold text-gray-800">REGISTER WITH SMATPAY</h2>
-        <p className="max-w-3xl mx-auto text-lg text-gray-600">
-          Take the next step in transforming the way you manage payments. Whether you're an individual, a small business or a large enterprise, Smatpay offers the tools you need to simplify transactions, reduce costs, and improve your customer experience.
-        </p>
-      </div>
-
- 
-
-      {/* Key Features */}
-      <section className="px-5 py-6 md:px-24">
-        <div className="flex items-center justify-center pt-6 text-center">
-          <div className="flex flex-col items-center max-w-4xl space-y-6">
-            <h1 className="text-black text-3xl xl:text-[53px] font-bold">Key Features</h1>
-          </div>
-        </div>
-
-        <HorizontalFooterAccordion
-          items={[
-            {
-              icon: <FaCreditCard className="text-[#4A90A4] w-6 h-6" />,
-              title: "Multiple Payment Methods",
-              description: "Supports payments through InnBucks, Master Card, EcoCash, Visa and ZimSwitch."
-            },
-            {
-              icon: <FaMoneyBillWave className="text-[#4A90A4] w-6 h-6" />,
-              title: "Flexible Fee Structure",
-              description: "Choose to absorb, split, or pass transaction fees to customers."
-            },
-            {
-              icon: <FaReceipt className="text-[#4A90A4] w-6 h-6" />,
-              title: "Fiscalisation",
-              description: "Automates fiscal receipting and supports tax compliance with ZIMRA."
-            },
-            {
-              icon: <FaGlobe className="text-[#4A90A4] w-6 h-6" />,
-              title: "International Payment Processing",
-              description: "Accept international Visa and Mastercard payments."
-            },
-            {
-              icon: <FaShieldAlt className="text-[#4A90A4] w-6 h-6" />,
-              title: "Tokenization",
-              description: "Securely enable recurring card payments."
-            },
-            {
-              icon: <FaRocket className="text-[#4A90A4] w-6 h-6" />,
-              title: "Quick Payouts",
-              description: "Processed within 24 to 48 hours—ensuring fast access to your funds."
-            },
-            {
-              icon: <FaLink className="text-[#4A90A4] w-6 h-6" />,
-              title: "Payment Requests",
-              description: "Create payment links, QR codes, and custom checkout pages."
-            },
-            {
-              icon: <FaPlug className="text-[#4A90A4] w-6 h-6" />,
-              title: "Seamless Integrations",
-              description: "Connect easily with apps, websites, and platforms using APIs and plugins."
-            },
-            {
-              icon: <FaShareAlt className="text-[#4A90A4] w-6 h-6" />,
-              title: "Split Payments",
-              description: "Instantly split revenue with third parties."
-            },
-            {
-              icon: <FaLock className="text-[#4A90A4] w-6 h-6" />,
-              title: "Security",
-              description: "PCI-standard encryption protects all payment data."
-            },
-            {
-              icon: <FaCalendarAlt className="text-[#4A90A4] w-6 h-6" />,
-              title: "Subscriptions",
-              description: "Automate billing on a recurring schedule."
-            },
-            {
-              icon: <FaUsers className="text-[#4A90A4] w-6 h-6" />,
-              title: "Batch Payouts",
-              description: "Makes it easy to make a single payment to multiple accounts."
-            }
-          ]}
-        />
-      </section>
-
-      {/* About Us Section */}
-      <div className="container flex flex-col items-center gap-8 px-6 py-6 mx-auto md:flex-row md:py-24">
+            {/* About Us Section */}
+      <div className="flex flex-col items-center gap-8 px-6 py-6 md:flex-row md:py-24 bg-gradient-to-t from-purple-100 to-white md:px-24">
         <div className="pb-4 space-y-4 md:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800">About Us</h2>
           <div className="pb-4 space-y-4 border-b border-black"></div>
@@ -186,6 +93,93 @@ export default function SmatPay() {
           />
         </div>
       </div>
+
+      {/* Register Section */}
+      <div className="flex flex-col px-6 py-16 text-center bg-purple-100 gap-y-6 md:px-24">
+        <h2 className="text-3xl font-bold text-gray-800 ">REGISTER WITH SMATPAY</h2>
+        <p className="max-w-3xl mx-auto text-lg text-gray-600">
+          Take the next step in transforming the way you manage payments. Whether you're an individual, a small business or a large enterprise, Smatpay offers the tools you need to simplify transactions, reduce costs, and improve your customer experience.
+        </p>
+            <CustomButton variant="primary" className="bg-[#8DC440] text-black font-bold ">
+              Speak to an Expert
+            </CustomButton>
+      </div>
+
+ 
+
+      {/* Key Features */}
+      <section className="px-5 py-6 md:px-24">
+        <div className="flex items-center justify-center pt-6 text-center">
+          <div className="flex flex-col items-center max-w-4xl space-y-6">
+            <h1 className="text-black text-3xl xl:text-[53px] font-bold">Key Features</h1>
+          </div>
+        </div>
+
+        <HorizontalFooterAccordion
+          items={[
+            {
+              icon: <FaCreditCard className="text-[#8140D5] w-6 h-6" />,
+              title: "Multiple Payment Methods",
+              description: "Supports payments through InnBucks, Master Card, EcoCash, Visa and ZimSwitch."
+            },
+            {
+              icon: <FaMoneyBillWave className="text-[#8140D5] w-6 h-6" />,
+              title: "Flexible Fee Structure",
+              description: "Choose to absorb, split, or pass transaction fees to customers."
+            },
+            {
+              icon: <FaReceipt className="text-[#8140D5] w-6 h-6" />,
+              title: "Fiscalisation",
+              description: "Automates fiscal receipting and supports tax compliance with ZIMRA."
+            },
+            {
+              icon: <FaGlobe className="text-[#8140D5] w-6 h-6" />,
+              title: "International Payment Processing",
+              description: "Accept international Visa and Mastercard payments."
+            },
+            {
+              icon: <FaShieldAlt className="text-[#8140D5] w-6 h-6" />,
+              title: "Tokenization",
+              description: "Securely enable recurring card payments."
+            },
+            {
+              icon: <FaRocket className="text-[#8140D5] w-6 h-6" />,
+              title: "Quick Payouts",
+              description: "Processed within 24 to 48 hours—ensuring fast access to your funds."
+            },
+            {
+              icon: <FaLink className="text-[#8140D5] w-6 h-6" />,
+              title: "Payment Requests",
+              description: "Create payment links, QR codes, and custom checkout pages."
+            },
+            {
+              icon: <FaPlug className="text-[#8140D5] w-6 h-6" />,
+              title: "Seamless Integrations",
+              description: "Connect easily with apps, websites, and platforms using APIs and plugins."
+            },
+            {
+              icon: <FaShareAlt className="text-[#8140D5] w-6 h-6" />,
+              title: "Split Payments",
+              description: "Instantly split revenue with third parties."
+            },
+            {
+              icon: <FaLock className="text-[#8140D5] w-6 h-6" />,
+              title: "Security",
+              description: "PCI-standard encryption protects all payment data."
+            },
+            {
+              icon: <FaCalendarAlt className="text-[#8140D5] w-6 h-6" />,
+              title: "Subscriptions",
+              description: "Automate billing on a recurring schedule."
+            },
+            {
+              icon: <FaUsers className="text-[#8140D5] w-6 h-6" />,
+              title: "Batch Payouts",
+              description: "Makes it easy to make a single payment to multiple accounts."
+            }
+          ]}
+        />
+      </section>
 
       <Footer />
     </div>
