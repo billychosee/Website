@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["400", "700"],
+  display: "swap", // recommended
 });
 
 export const metadata: Metadata = {
@@ -24,7 +25,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/smatech_t_logo.svg" type="image/svg+xml" />
       </head>
-      <body className={`${montserrat.variable} antialiased text-black font-sans`}>
+      <body
+        className={`${montserrat.variable} antialiased text-black font-sans`} >
         <Navbar />
         {children}
       </body>

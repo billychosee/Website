@@ -160,9 +160,9 @@ export default function Home() {
 <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
   {/* Left column */}
   <div className="md:w-1/2">
-    <h4 className="text-sm font-semibold text-[#8DC440] uppercase tracking-wide mb-4">
+    <h1 className="text-sm font-semibold text-[#8DC440] uppercase tracking-wide mb-4">
      Industries We Serve
-    </h4>
+    </h1>
     <h2 className="mb-4 text-3xl font-extrabold leading-snug md:text-4xl lg:text-xl">
      Empowering organizations with scalable IT and enterprise-grade solutions — built for long-term impact and measurable transformation.
     </h2>
@@ -234,10 +234,10 @@ export default function Home() {
 />
   </div>
   <div className="flex flex-col justify-center w-full pt-10 space-y-5 text-center text-black lg:space-y-4 xl:space-y-10 md:w-1/2 md:justify-start md:text-start">
-    <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h2>
-    <h1 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">
+    <h1 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h1>
+    <h2 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">
       Free IT Consultancy.
-    </h1>
+    </h2>
     <p className="text-sm lg:text-xs xl:text-sm">
       At Smatech Group, we don&apos;t just provide products; we offer solutions that transform the way you do business.
     </p>
