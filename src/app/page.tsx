@@ -222,7 +222,7 @@ export default function Home() {
 
 {/* consultancy section */}
 
-<section className="flex flex-col px-5 pt-16 bg-green-50 md:px-24 lg:px-24 md:flex-row ">
+<section className="flex flex-col px-5 pt-16 bg-[#E8F7FD] md:px-24 lg:px-24 md:flex-row ">
   
   <div className="w-full md:w-1/2">
  <Image 
@@ -298,7 +298,7 @@ export default function Home() {
     </div>
     <div className="flex gap-5">
       <div>
-        <FaMedal className="text-gray-400" size={24} />;
+        <FaMedal className="text-gray-400" size={24} />
       </div>
       <div>
         <h1 className="text-base font-bold">Experienced</h1>
@@ -524,7 +524,7 @@ export default function Home() {
     <div className="flex items-center my-10">
   <div className="flex-grow border-t border-gray-400"></div>
   <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
-    OUR BUSINESS
+    OUR PATNERS AND BUSINESS
   </span>
   <div className="flex-grow border-t border-gray-400"></div>
 </div>

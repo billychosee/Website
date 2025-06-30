@@ -70,17 +70,17 @@ export default function Footer() {
             <h2 className="items-center justify-center mb-4 font-bold">Contact Info</h2>
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
-              <p>+27 10 786 0259</p>
+              <p>+263 86 880 08361</p>
             </div>
             
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
-              <p>+27 10 786 0259</p>
+              <p>+263 78 956 6427 </p>
             </div>
             
             <div className="flex items-center gap-2">
               <BsMailbox2 className="text-[#8DC440] w-4 h-4" />
-              <p>info@smatech.com</p>
+              <p>info@smatechgroup.com</p>
             </div>
             
             <div className="flex items-center gap-2">
@@ -127,7 +127,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="pt-6 mt-10 text-sm text-center text-gray-300 border-t border-gray-400">
-          © {new Date().getFullYear()} Smatech. All rights reserved.
+          © {new Date().getFullYear()} Smatech Group. All rights reserved.
         </div>
       </div>
     </footer>

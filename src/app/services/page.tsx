@@ -129,7 +129,7 @@ export default function ServicesPage() {
     <div className="bg-[#E8F7FD] pt-0">    {/* Outreach by the Numbers */}
  <CompanyProfile
   heading="Outreach by the Numbers"
-  subheading="The energy of a start upA well established expertise"
+  subheading="The energy of a start up A well established expertise"
   stats={[
     { end: 45, label: 'Certified Microsoft Professionals.' },
     { end: 68, label: 'Episerver Certified Developers' },

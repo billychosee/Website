@@ -49,7 +49,7 @@ export default function AboutUs() {
         We at Smatech Group and we believe that human, organizational, and <br />
         operational intelligence are important, not just artificial intelligence.
       </p>
-      <CustomButton variant="primary" className="bg-[#8DC440] text-black mt-5">
+      <CustomButton variant="primary" className="!bg-[#8DC440] text-black mt-5 hover:!bg-black hover:text-white">
         Speak to an Expert
       </CustomButton>
       <CustomButton variant="link" className="mt-5 font-bold text-black">
@@ -230,15 +230,15 @@ export default function AboutUs() {
 
     <div className="space-y-3">
       <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-        <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
+        <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare, Zimbabwe</p>
       </div>
       <div className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-[#8DC440] before:mt-2 before:mr-2 before:inline-block">
-        <p><strong>Zimbabwe</strong>: 11 Earls Road, Alexandra Park, Harare, Zimbabwe</p>
+        <p><strong>South Africa</strong>: 12 Riversands Road, Beverly, Sandton, South Africa, 2191</p>
       </div>
     </div>
 
-    <div className="flex flex-col justify-center text-center md:flex-row">
-      <CustomButton variant="primary" className="bg-[#8DC440] text-black">
+    <div className="flex flex-col text-center md:flex-row">
+      <CustomButton variant="primary" className="!bg-[#8DC440] text-black hover:!bg-black hover:!text-white">
         Speak to an Expert
       </CustomButton>
       <CustomButton variant="link" className="font-bold text-black ">

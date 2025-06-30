@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { NAV_ITEMS, ICONS } from "./config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type { NavItem, DropdownItem } from "./types"; // Added DropdownItem import
+import type { NavItem, DropdownItem } from "./types"; 
 
 function hasDropdown(item: NavItem): item is NavItem & { dropdown: { items: readonly DropdownItem[] } } {
   return !!item.dropdown;
@@ -14,7 +14,7 @@ export default function DesktopNav() {
 
   const renderDropdown = (item: NavItem & { dropdown: { items: readonly DropdownItem[] } }) => (
     <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-0 text-black font-normal w-48 z-50 top-full py-2 transition-all duration-200 ease-out">
-      {item.dropdown.items.map((subItem: DropdownItem) => ( // Explicitly typed subItem
+      {item.dropdown.items.map((subItem: DropdownItem) => (
         <li key={subItem.href}>
           <Link
             href={subItem.href}

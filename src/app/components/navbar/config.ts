@@ -21,9 +21,9 @@ export const NAV_ITEMS = [
     icon: faCog,
     dropdown: {
       items: [
-        { label: "IT Consulting", href: "/services/it-consulting" },
-        { label: "Cloud Solutions", href: "/services/cloud-solutions" },
-        { label: "Cybersecurity", href: "/services/cybersecurity" }
+        { label: "AI & Machine Learning", href: "/services/ai-and-machine-learning" },
+        { label: "Cyber Security", href: "/services/cyber-security" },
+        { label: "Platform Develoment", href: "/services/platform-development" }
       ] as const
     }
   },
