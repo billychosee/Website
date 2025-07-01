@@ -70,11 +70,11 @@ export default function MobileNav({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden">
-          <div 
-            ref={menuRef} 
-            className="fixed top-0 bottom-0 right-0 z-50 flex flex-col w-4/5 max-w-md p-6 overflow-y-auto bg-white shadow-xl"
-          >
+<div className="fixed inset-0 z-40 bg-white md:hidden">
+  <div 
+    ref={menuRef} 
+    className="fixed right-0 z-50 flex flex-col w-3/4 max-w-sm p-4 bg-white shadow-lg"
+  >
             <div className="flex items-center justify-between pb-4 mb-4 border-b">
               <Link href="/" onClick={onToggle}>
                 <Image

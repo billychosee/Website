@@ -33,7 +33,7 @@ export default function DesktopNav() {
 
   return (
     <div className="flex items-center">
-      <ul className="items-center justify-center flex-1 hidden gap-10 font-bold text-black md:flex">
+      <ul className="items-center justify-center flex-1 hidden gap-8 font-semibold text-black md:flex">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           return (
