@@ -1,4 +1,4 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { IconType } from 'react-icons';
 
 export type DropdownItem = {
   readonly label: string;
@@ -8,7 +8,7 @@ export type DropdownItem = {
 export type NavItem = {
   readonly label: string;
   readonly href: string;
-  readonly icon: IconDefinition;
+  readonly icon: IconType;
   readonly dropdown?: {
     readonly items: readonly DropdownItem[];
   };

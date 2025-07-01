@@ -1,36 +1,50 @@
 import { 
-  faHome, faInfoCircle, faCog, faBoxOpen,
-  faBook, faBriefcase, faEnvelope, faSearch,
-  faBars, faTimes, faChevronDown, faChevronUp
-} from '@fortawesome/free-solid-svg-icons';
+  FiHome, 
+  FiInfo, 
+  FiGrid, 
+  FiBox,
+  FiBook, 
+  FiUsers, 
+  FiMail,
+  FiSearch,
+  FiMenu,
+  FiX,
+  FiChevronDown,
+  FiChevronUp,
+  FiGlobe
+} from 'react-icons/fi';
 
 export const NAV_ITEMS = [
   {
     label: "HOME",
     href: "/",
-    icon: faHome
+    icon: FiHome,
+    iconClass: "text-current"
   },
   {
     label: "ABOUT US",
     href: "/about-us",
-    icon: faInfoCircle
+    icon: FiInfo,
+    iconClass: "text-current"
   },
   {
     label: "SERVICES",
     href: "/services",
-    icon: faCog,
+    icon: FiGrid,
+    iconClass: "text-current",
     dropdown: {
       items: [
         { label: "AI & Machine Learning", href: "/services/ai-and-machine-learning" },
         { label: "Cyber Security", href: "/services/cyber-security" },
-        { label: "Platform Develoment", href: "/services/platform-development" }
+        { label: "Platform Development", href: "/services/platform-development" }
       ] as const
     }
   },
   {
     label: "PRODUCTS",
     href: "/products",
-    icon: faBoxOpen,
+    icon: FiBox,
+    iconClass: "text-current",
     dropdown: {
       items: [
         { label: "Smat QR", href: "/products/smat-qr" },
@@ -43,24 +57,27 @@ export const NAV_ITEMS = [
   {
     label: "RESOURCES",
     href: "/resources",
-    icon: faBook
+    icon: FiGlobe,
+    iconClass: "text-current"
   },
   {
-    label: "CARRIERS",
+    label: "CAREERS",
     href: "https://erp.smatechgroup.com/recruitment/recruitment_portal",
-    icon: faBriefcase
+    icon: FiUsers,
+    iconClass: "text-current"
   },
   {
     label: "CONTACT",
     href: "/contact-us",
-    icon: faEnvelope
+    icon: FiMail,
+    iconClass: "text-current"
   }
 ] as const;
 
 export const ICONS = {
-  search: faSearch,
-  bars: faBars,
-  times: faTimes,
-  chevronDown: faChevronDown,
-  chevronUp: faChevronUp
+  search: FiSearch,
+  bars: FiMenu,
+  times: FiX,
+  chevronDown: FiChevronDown,
+  chevronUp: FiChevronUp
 } as const;
