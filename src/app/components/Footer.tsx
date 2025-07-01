@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Contact Info */}
-          <div className="flex flex-col items-center text-xl md:items-start lg:text-sm xl:text-base">
+          <div className="flex flex-col items-center text-xl md:items-start lg:text-sm xl:text-base space-y-2">
             <h2 className="items-center justify-center mb-4 font-bold">Contact Info</h2>
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
