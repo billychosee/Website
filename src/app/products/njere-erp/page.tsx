@@ -30,7 +30,7 @@ export default function NjereERP() {
       </Head>
 
       {/* Hero Header */}
-      <div className="relative flex flex-col justify-center h-screen px-6 py-32 text-left md:px-24">
+      <div className="relative flex flex-col justify-center px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="/njere_bg.png"
@@ -227,7 +227,7 @@ export default function NjereERP() {
 <div className="container flex flex-col items-center gap-8 px-6 py-16 mx-auto md:flex-row md:py-14">
 
   <div className="pb-4 space-y-4 md:w-1/2 ">
-    <h2 className="text-xl font-bold text-gray-800">Smatedu is intergrated with an open-source web conferencing system designed for online learning and collaboration.</h2>
+    <h2 className="text-xl font-bold text-gray-800">Njere is intergrated with an open-source web conferencing system designed for online learning and collaboration.</h2>
     <div className="pb-4 space-y-4 border-b border-black"></div>
     <p className="text-sm text-gray-600 lg:text-xs xl:text-sm gap-y-5"> It provides real-time audio, video, and chat capabilities, along with shared whiteboard, screen sharing, and interactive features such as polls and breakout rooms.. It offers an interactive and engaging environment for participants to communicate and collaborate, making it a popular tool for distance learning and remote teamwork.</p>
   </div>

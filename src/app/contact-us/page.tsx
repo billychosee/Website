@@ -42,6 +42,28 @@ const ContactPage = () => {
                   <div className="p-2 mr-3 bg-green-100 rounded-full">
                     <FiMapPin className="text-green-600" />
                   </div>
+                  <h3 className="text-lg font-semibold text-gray-800">Harare, ZIM</h3>
+                </div>
+                <p className="text-gray-600 ml-11">
+                  13 Brentwood Ave, Groombridge, Harare, Zimbabwe
+                </p>
+                <div className='flex flex-col md:flex-row'>
+                <div className="flex items-center mt-3 ml-11">
+                  <FiPhone className="mr-2 text-gray-400" />
+                  <span className="text-gray-600">+263 86 880 08361</span>
+                </div>
+                <div className="flex items-center mt-3 ml-11">
+                  <FiPhone className="mr-2 text-gray-400" />
+                  <span className="text-gray-600">+263 78 956 6427</span>
+                </div>
+                </div>
+              </div>
+              
+              <div className="p-6 rounded-lg bg-gray-50">
+                <div className="flex items-center mb-4">
+                  <div className="p-2 mr-3 bg-green-100 rounded-full">
+                    <FiMapPin className="text-green-600" />
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-800">Johannesburg, SA</h3>
                 </div>
                 <p className="text-gray-600 ml-11">
@@ -52,23 +74,7 @@ const ContactPage = () => {
                   <span className="text-gray-600">+27 10 786 0259</span>
                 </div>
               </div>
-              
-              <div className="p-6 rounded-lg bg-gray-50">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 mr-3 bg-green-100 rounded-full">
-                    <FiMapPin className="text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">Harare, ZIM</h3>
-                </div>
-                <p className="text-gray-600 ml-11">
-                  13 Brentwood Ave, Groombridge, Harare, Zimbabwe
-                </p>
-                
-                <div className="flex items-center mt-3 ml-11">
-                  <FiPhone className="mr-2 text-gray-400" />
-                  <span className="text-gray-600">+263 78 956 6427</span>
-                </div>
-              </div>
+                            
             </div>
           </div>
           
@@ -145,7 +151,7 @@ const ContactPage = () => {
                       id="phone"
                       name="phone"
                       className="w-full px-4 py-3 pl-10 text-black bg-gray-100 border-none rounded-lg focus:ring-2 focus:ring-[#8DC440] focus:bg-gray-50"
-                      placeholder="+27 00 000 0000"
+                      placeholder="+263 00 000 0000"
                     />
                   </div>
                 </div>
@@ -213,7 +219,7 @@ const ContactPage = () => {
         </div>
       </div>
       
-      {/* Embedded Google Map for Harare location */}
+      {/* Embedded Google Map for Harare Zimbabwe Smatech Group location */}
                 <div className="mx-5 my-6 overflow-hidden rounded-lg md:mx-24 h-60 md:my-14">
                   <iframe
                     width="100%"

@@ -21,28 +21,28 @@ export const ImageTextListSection: React.FC<ImageTextListSectionProps> = ({
   listItems,
 }) => {
   return (
-    <section className="container flex flex-col items-center justify-between px-6 py-16 md:flex-row md:py-24">
+    <section className="flex flex-col items-center w-full gap-10 px-5 py-6 md:flex-row md:py-24 md:px-24">
       {/* Image */}
-      <div className="md:w-1/2 h-96 flex items-center justify-center order-1 md:order-none">
+      <div className="flex my-5 overflow-hidden md:w-1/2 h-96 rounded-xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          className="rounded-2xl object-contain"
+          className="object-cover w-full h-full"
           priority
         />
       </div>
 
       {/* Text */}
-      <div className="space-y-4 md:w-1/2 pb-4">
+      <div className="pb-4 space-y-4 md:w-1/2 text-start">
         <h2 className="text-3xl font-bold text-gray-800">{heading}</h2>
-        <p className="text-gray-600 text-sm lg:text-xs xl:text-sm">{paragraph}</p>
-        <div className="border-b border-black pb-4"></div>
+        <p className="text-sm text-gray-600 lg:text-xs xl:text-sm">{paragraph}</p>
+        <div className="pb-4 border-b border-black"></div>
         <ul className="space-y-2">
           {listItems.map((item, index) => (
-            <li key={index} className="flex items-center gap-2 text-sm lg:text-xs xl:text-sm text-gray-800">
-              <CheckCircle className="text-green-600 w-5 h-5" />
+            <li key={index} className="flex items-center gap-2 text-sm text-gray-800 lg:text-xs xl:text-sm">
+              <CheckCircle className="w-5 h-5 text-green-600" />
               {item}
             </li>
           ))}

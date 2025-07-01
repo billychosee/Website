@@ -12,7 +12,7 @@ import { ImageTextIconListSection } from '@/app/components/ImageTextIconListSect
 import { ImageTextIconListSectionReverse } from '@/app/components/ImageTextIconListSectionReverse';
 import { ImageTextListSection } from '@/app/components/ImageTextListSection';
 import SideBySideAccordion, { FAQItem } from "@/app/components/SideBySideAccordion";
-import Footer from "./components/Footer";
+import Footer from '@/app/components/Footer';
 
 const faqData: FAQItem[] = [
   {
@@ -167,10 +167,12 @@ function CyberSecurity() {
   />
 </div>
 
+{/* Start Of FAQ */}
 
-<div className="flex items-center my-10">
+<div className='pb-10 bg-[#86e50004]'>
+<div className="flex items-center px-5 my-10 md:px-24">
   <div className="flex-grow border-t border-gray-400"></div>
-  <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+  <span className="text-sm font-semibold text-[#8DC440] whitespace-nowrap px-2">
     FREQUENTLY ASKED QUESTIONS
   </span>
   <div className="flex-grow border-t border-gray-400"></div>
@@ -178,6 +180,9 @@ function CyberSecurity() {
 
 <h1 className="my-8 text-3xl font-bold text-center">Frequently Asked Questions</h1>
 <SideBySideAccordion data={faqData} />
+</div>
+
+{/* End Of FAQ */}
 
                 <Footer />
     </div>

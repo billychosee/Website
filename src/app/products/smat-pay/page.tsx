@@ -21,14 +21,14 @@ import CustomButton from '@/app/components/CustomButton';
 
 export default function SmatPay() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="bg-gray-50">
       <Head>
         <title>SmatPay Payment Gateway | Smatech Group</title>
         <meta name="description" content="SmatPay - Secure and flexible payment solutions for Zimbabwe" />
       </Head>
 
       {/* Hero Header */}
-      <div className="relative flex flex-col justify-center h-screen px-6 py-32 text-left md:px-24">
+      <div className="relative flex flex-col justify-center px-6 py-32 text-left md:px-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="/smat_pay_bg.png"

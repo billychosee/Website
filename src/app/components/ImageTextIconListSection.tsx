@@ -27,21 +27,10 @@ export const ImageTextIconListSection: React.FC<ImageTextIconListSectionProps> =
   iconItems,
 }) => {
   return (
-    <section className="flex flex-col items-center justify-between w-full px-5 py-16 md:flex-row-reverse md:py-24 md:px-24">
-
-      <div className="flex my-5 overflow-hidden md:w-1/2 h-96 rounded-xl">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={imageWidth}
-          height={imageHeight}
-          className="object-cover w-full h-full"
-          priority
-        />
-      </div>
+    <section className="flex flex-col items-center gap-10 px-5 py-16 md:flex-row md:py-24 md:px-24">
       
       {/* text block */}
-      <div className="space-y-4 md:w-1/2 md:pl-12"> 
+      <div className="space-y-4 md:w-1/2"> 
         <h2 className="text-3xl font-bold text-gray-900">{heading}</h2>
         <p className="text-base text-gray-600">{description}</p>
         <div className="my-6 border-b border-gray-300"></div>
@@ -55,6 +44,18 @@ export const ImageTextIconListSection: React.FC<ImageTextIconListSectionProps> =
           ))}
         </div>
       </div>
+
+            <div className="flex my-5 overflow-hidden md:w-1/2 h-96 rounded-xl">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+          className="object-cover w-full h-full"
+          priority
+        />
+      </div>
+      
     </section>
   );
 };

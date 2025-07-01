@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Footer from "./components/Footer";
 import { useState, useRef, useEffect } from "react";
-import { ShieldCheck } from "lucide-react";
+import { ArrowBigLeft, ArrowBigRightDash, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import IndustryCard from "./components/IndustryCard";
 import LogoSlider from "./components/LogoSlider";
@@ -181,7 +181,7 @@ export default function Home() {
       We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
     </p>
     <div className="w-12 h-12 ml-4 rounded-full bg-[#4A90A4] flex-shrink-0 flex items-center justify-center hover:bg-[#387a8d] transition">
-      <span className="text-xl text-white cursor-pointer">→</span>
+      <ArrowBigRightDash className="w-8 h-8" />
     </div>
   </div>
     </div>
@@ -190,12 +190,12 @@ export default function Home() {
 
 <div className="grid grid-cols-1 mt-10 md:grid-cols-5">
       <IndustryCard
-        title="Medium Enterprise"
+        title="FinTech"
         description="Highest level of expertise in digital transformation."
         iconSrc="/shift_icon.svg"
       />
       <IndustryCard
-        title="Large Enterprise"
+        title="PropTech"
         description="Improved perfomance and user experience"
         iconSrc="/man_icon.svg"
       />
@@ -210,8 +210,8 @@ export default function Home() {
         iconSrc="/shake_hands_icon.svg"
       />
       <IndustryCard
-        title="Enterprise Technology"
-        description="Technology solutions we offer in the Enterprise sector?"
+        title="Insurance"
+        description="SmatSure"
         iconSrc="/light_icon.svg"
       />
     </div>
@@ -428,7 +428,7 @@ export default function Home() {
     title="Software Development"
     summary="Custom Business solutions."
     description="We design and develop custom software solutions tailored to your specific business needs, ensuring scalability, security, and optimal performance."
-    learnMoreLink="/software-development"
+    learnMoreLink="/services/platform-development"
     services={[
       {
         title: "Web Applications",
@@ -456,10 +456,10 @@ export default function Home() {
   {/* Connectivity Voice & Data */}
   <ServiceAccordion
     icon="/data_icon.svg"
-    title="Connectivity Voice & Data"
+    title="Ai And Machine Learning"
     summary="Effective communication is the cornerstone of success."
     description="Our comprehensive voice and data solutions ensure seamless connectivity for your business operations, with reliable infrastructure and cutting-edge technology."
-    learnMoreLink="/connectivity"
+    learnMoreLink="/services/aI-and-machine-learning"
     services={[
       {
         title: "Network Infrastructure",
@@ -484,13 +484,13 @@ export default function Home() {
     ]}
   />
 
-  {/* IT Support & Maintenance */}
+  {/* Cyber Security */}
   <ServiceAccordion
     icon="/it_support_icon.svg"
-    title="IT Support & Maintenance"
+    title="Cyber Security"
     summary="Protect your business from cyberattacks."
     description="Our expert team provides comprehensive IT support and maintenance services to keep your systems running smoothly and securely around the clock."
-    learnMoreLink="/it-support"
+    learnMoreLink="/services/cyber-security"
     services={[
       {
         title: "24/7 Monitoring",
@@ -514,6 +514,8 @@ export default function Home() {
       }
     ]}
   />
+
+  
 </div>
     
 {/* Our Business */}
