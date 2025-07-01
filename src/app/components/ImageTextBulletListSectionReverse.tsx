@@ -18,7 +18,7 @@ export const ImageTextBulletListSectionReverse: React.FC<ImageTextBulletListSect
   listItems,
 }) => {
   return (
-    <section className="flex flex-col items-center justify-center w-full gap-0 px-5 py-0 md:flex-row md:py-24 md:px-24 md:gap-20">
+    <section className="flex flex-col items-center justify-center w-full gap-0 px-5 py-0 md:flex-row md:py-14 md:px-24 md:gap-20">
       <div className="pb-4 space-y-4 md:w-1/2">
         <h2 className="text-3xl font-bold text-gray-800 lg:text-xl xl:text-3xl">{heading}</h2>
         <div className="pb-4 border-b border-black"></div>

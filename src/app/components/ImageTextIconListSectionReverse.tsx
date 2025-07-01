@@ -27,7 +27,7 @@ export const ImageTextIconListSectionReverse: React.FC<ImageTextIconListSectionR
   iconItems,
 }) => {
   return (
-    <section className="flex flex-col items-center w-full gap-10 px-5 py-16 md:flex-row md:py-24 md:px-24">
+    <section className="flex flex-col items-center w-full gap-10 px-5 py-16 md:flex-row md:py-14 md:px-24">
 
       <div className="flex my-5 overflow-hidden md:w-1/2 h-96 rounded-xl">
         <Image

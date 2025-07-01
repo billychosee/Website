@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import {
   FaHome,
@@ -18,6 +17,18 @@ import {
 import { ImageTextListSection } from '../components/ImageTextListSection';
 import HorizontalFooterAccordion from '../components/HorizontalFooterAccordion';
 import { ImageTextListSectionReverse } from '../components/ImageTextListSectionReverse';
+
+export const metadata = {
+  title: 'SmatProp | Smart Property Management Software for Landlords',
+  description: 'Streamline rental operations with tenant screening, automated payments, and lease management for residential and commercial properties.',
+  openGraph: {
+    title: 'SmatProp | Complete Property Management Solution',
+    description: 'Digital platform for landlords featuring tenant credit checks, online rent collection, and maintenance tracking.',
+    url: 'https://smatechgroup.com/products/smatprop',
+    siteName: 'SmaTech Group'
+  }
+};
+
 import Footer from '../components/Footer';
 
 export default function SmatPropPage() {
@@ -53,10 +64,6 @@ export default function SmatPropPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-14">
-      <Head>
-        <title>SmatProp | Smatech Group</title>
-        <meta name="description" content="SmatProp - Smart property and tenant management solutions" />
-      </Head>
 
       {/* Hero Header */}
       <div className="relative px-6 py-32 text-left md:px-24">

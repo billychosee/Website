@@ -4,6 +4,17 @@ import { FiMail, FiPhone, FiMapPin, FiMessageSquare, FiUser, FiChevronDown } fro
 import Image from 'next/image';
 import Footer from '../components/Footer';
 
+export const metadata = {
+  title: 'Contact SmaTech Group | IT Solutions Experts in Zimbabwe & South Africa',
+  description: 'Get in touch with our IT specialists for customized business solutions. Offices in Harare, Zimbabwe and Johannesburg, South Africa.',
+  openGraph: {
+    title: 'Contact SmaTech Group | IT Solutions Experts',
+    description: 'Reach our technology specialists for tailored business solutions.',
+    url: "https://smatechgroup.netlify.app/contact-us",
+    siteName: 'SmaTech Group'
+  }
+};
+
 const ContactPage = () => {
   return (
     <section className='text-black bg-white pt-14'>

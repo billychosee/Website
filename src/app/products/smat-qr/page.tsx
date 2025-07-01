@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import FeatureCard from '@/app/components/FeatureCard'
 import FooterAccordion2 from '@/app/components/FooterAccordion2'
@@ -10,6 +9,17 @@ import {
   FaHeart
 } from 'react-icons/fa'
 import Footer from '@/app/components/Footer'
+
+export const metadata = {
+  title: 'SmatQR | Contactless Digital Menu & Ordering System',
+  description: 'Transform your restaurant operations with QR code menus, contactless ordering, and integrated payments for safer, more efficient customer service.',
+  openGraph: {
+    title: 'SmatQR | QR Code Menu Solution for Restaurants & Cafes',
+    description: 'Go paperless with digital menus, instant waiter calls, and seamless payment processing - all accessible through a simple QR code scan.',
+    url: 'https://smatechgroup.com/products/smatqr',
+    siteName: 'SmaTech Group'
+  }
+};
 
 export default function SmatQr() {
   // keep the original images
@@ -44,10 +54,6 @@ export default function SmatQr() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-14">
-      <Head>
-        <title>Smat Qr | Smatech Group</title>
-        <meta name="description" content="SmatProp - Smart property and tenant management solutions" />
-      </Head>
 
       {/* Hero Header */}
       <div className="relative px-6 py-32 text-left md:px-24">

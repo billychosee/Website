@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Footer from "./components/Footer";
 import { useState, useRef, useEffect } from "react";
-import { ArrowBigLeft, ArrowBigRightDash, ShieldCheck } from "lucide-react";
+import { ArrowBigRightDash, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import IndustryCard from "./components/IndustryCard";
 import LogoSlider from "./components/LogoSlider";

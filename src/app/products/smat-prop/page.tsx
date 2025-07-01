@@ -2,27 +2,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import {
   FaHome,
-  FaUsers,
   FaMoneyCheckAlt,
   FaTools,
   FaRegFileAlt,
   FaShieldAlt,
-  FaCommentDots,
   FaGlobe,
   FaDollarSign,
-  FaClock,
   FaChartLine,
-  FaHeart,
   FaCreditCard,
   FaListAlt,
   FaFileContract,
   FaBell,
   FaWrench,
-  FaFlag
 } from 'react-icons/fa';
 import { ImageTextListSection } from '@/app/components/ImageTextListSection';
 import HorizontalFooterAccordion from '@/app/components/HorizontalFooterAccordion';
 import { ImageTextListSectionReverse } from '@/app/components/ImageTextListSectionReverse';
+
+export const metadata = {
+  title: 'SmatProp | Smart Property & Tenant Management System',
+  description: 'Comprehensive rental property solution with tenant screening, lease management, and automated payments for landlords and property managers.',
+  openGraph: {
+    title: 'SmatProp | Modern Property Management Software',
+    description: 'Streamline rental operations with tenant credit checks, lease tracking, and online payment processing for residential and commercial properties.',
+    url: 'https://smatechgroup.com/products/smatprop',
+    siteName: 'SmaTech Group'
+  }
+};
+
 import Footer from '@/app/components/Footer';
 
 export default function SmatPropPage() {

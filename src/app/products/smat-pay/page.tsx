@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '@/app/components/Footer';
 import { 
@@ -19,13 +18,20 @@ import {
 import HorizontalFooterAccordion from '@/app/components/HorizontalFooterAccordion';
 import CustomButton from '@/app/components/CustomButton';
 
+export const metadata = {
+  title: 'SmatPay Payment Gateway | Secure Digital Payments for Zimbabwe',
+  description: 'Zimbabwe\'s leading payment solution supporting EcoCash, Visa, Mastercard & ZimSwitch with fiscalisation compliance and competitive fees.',
+  openGraph: {
+    title: 'SmatPay | Reliable Payment Processing for Zimbabwean Businesses',
+    description: 'Accept local and international payments with our secure gateway featuring multi-currency support and ZIMRA compliance.',
+    url: 'https://smatechgroup.com/products/smatpay',
+    siteName: 'SmaTech Group'
+  }
+};
+
 export default function SmatPay() {
   return (
     <div className="bg-gray-50">
-      <Head>
-        <title>SmatPay Payment Gateway | Smatech Group</title>
-        <meta name="description" content="SmatPay - Secure and flexible payment solutions for Zimbabwe" />
-      </Head>
 
       {/* Hero Header */}
       <div className="relative flex flex-col justify-center px-6 py-32 text-left md:px-24">

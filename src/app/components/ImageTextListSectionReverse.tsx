@@ -21,7 +21,7 @@ export const ImageTextListSectionReverse: React.FC<ImageTextListSectionReversePr
   listItems,
 }) => {
   return (
-    <section className="flex flex-col items-center w-full gap-8 px-5 py-16 md:flex-row md:py-24 md:px-24">
+    <section className="flex flex-col items-center w-full gap-8 px-5 py-16 md:flex-row md:py-14 md:px-24">
 
       <div className="pb-4 space-y-4 md:w-1/2">
         <h2 className="text-3xl font-bold text-gray-800">{heading}</h2>

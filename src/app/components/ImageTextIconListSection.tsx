@@ -27,7 +27,7 @@ export const ImageTextIconListSection: React.FC<ImageTextIconListSectionProps> =
   iconItems,
 }) => {
   return (
-    <section className="flex flex-col items-center gap-10 px-5 py-16 md:flex-row md:py-24 md:px-24">
+    <section className="flex flex-col items-center gap-10 px-5 py-16 md:flex-row md:py-14 md:px-24">
       
       {/* text block */}
       <div className="space-y-4 md:w-1/2"> 

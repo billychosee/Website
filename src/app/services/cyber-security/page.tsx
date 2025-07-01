@@ -14,6 +14,17 @@ import { ImageTextListSection } from '@/app/components/ImageTextListSection';
 import SideBySideAccordion, { FAQItem } from "@/app/components/SideBySideAccordion";
 import Footer from '@/app/components/Footer';
 
+export const metadata = {
+  title: 'Cybersecurity Solutions | Enterprise-Grade Protection for Businesses',
+  description: 'Comprehensive cybersecurity services including threat detection, data protection, and managed IT security for businesses of all sizes. 24/7 monitoring and support.',
+  openGraph: {
+    title: 'Enterprise Cybersecurity Services | Threat Protection & Data Security',
+    description: 'Proactive cybersecurity solutions with risk assessment, network protection, and ransomware defense tailored to your business needs.',
+    url: 'https://smatechgroup.com/services/cybersecurity',
+    siteName: 'SmaTech Group'
+  }
+};
+
 const faqData: FAQItem[] = [
   {
     question: "Are free Anti-Virus software any good?",

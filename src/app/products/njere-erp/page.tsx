@@ -21,6 +21,17 @@ import {
 } from "react-icons/fa";
 import { FeatureGrid } from '@/app/components/FeatureGrid';
 
+export const metadata = {
+  title: 'Njere School ERP System | Comprehensive Education Management Software',
+  description: 'Streamline school operations with Njere ERP - the complete solution for student management, e-learning, finance, and administration in educational institutions.',
+  openGraph: {
+    title: 'Njere School ERP | All-in-One Education Management Platform',
+    description: 'End-to-end school management system with e-learning, payments, and administration tools for modern educational institutions.',
+    url: 'https://smatechgroup.com/products/njere-erp',
+    siteName: 'SmaTech Group'
+  }
+};
+
 export default function NjereERP() {
   return (
     <div className="min-h-screen bg-gray-50">
