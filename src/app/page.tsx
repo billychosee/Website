@@ -14,8 +14,20 @@ import { FaMedal } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaShoppingBasket } from "react-icons/fa";
-import { FaSmile } from "react-icons/fa";
+import { FaSmile, } from "react-icons/fa";
 import Link from 'next/link';
+
+const logos = [
+  { logo: "/Smatech_logo.svg", url: "/" },
+  { logo: "/smatpay_logo.svg", url: "/" },
+  { logo: "/smat_qr_logo.svg", url: "/" },
+  { logo: "/smat_tutor_logo.svg", url: "/" },
+  { logo: "/smatprop_logo.svg", url: "/" },
+  { logo: "/njere_logo.svg", url: "/" },
+  { logo: "/CS-Logo.png", url: "/" },
+  { logo: "/icz-logo.png", url: "/" },
+  { logo: "/ipec_logo.png", url: "/" },
+];
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -242,7 +254,7 @@ export default function Home() {
       At Smatech Group, we don&apos;t just provide products; we offer solutions that transform the way you do business.
     </p>
     <Link href="/contact-us">
-  <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-[#8DC440] hover:text-black cursor-pointer font-bold">
+  <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-white hover:text-black cursor-pointer font-bold hover:shadow-2xl">
     Tell us how we can help
   </button>
 </Link>
@@ -393,7 +405,7 @@ export default function Home() {
   </div>
 
   {/* IT Consultancy Service */}
-  <ServiceAccordion
+  {/* <ServiceAccordion
     icon="/consultancy_icon.svg"
     title="IT Consultancy Service"
     summary="We make your data useful and easy to use."
@@ -420,7 +432,7 @@ export default function Home() {
         iconName: "FaLifeRing"
       }
     ]}
-  />
+  /> */}
 
   {/* Software Development */}
   <ServiceAccordion
@@ -453,36 +465,37 @@ export default function Home() {
     ]}
   />
 
-  {/* Connectivity Voice & Data */}
-  <ServiceAccordion
-    icon="/data_icon.svg"
-    title="Ai And Machine Learning"
-    summary="Effective communication is the cornerstone of success."
-    description="Our comprehensive voice and data solutions ensure seamless connectivity for your business operations, with reliable infrastructure and cutting-edge technology."
-    learnMoreLink="/services/aI-and-machine-learning"
-    services={[
-      {
-        title: "Network Infrastructure",
-        description: "Robust networking solutions for businesses",
-        iconName: "FaNetworkWired"
-      },
-      {
-        title: "VoIP Solutions",
-        description: "Cost-effective voice communication systems",
-        iconName: "FaPhoneAlt"
-      },
-      {
-        title: "Cloud Connectivity",
-        description: "Secure and reliable cloud access",
-        iconName: "FaCloud"
-      },
-      {
-        title: "Data Security",
-        description: "Protection for your critical data",
-        iconName: "FaShieldAlt"
-      }
-    ]}
-  />
+  {/* AI and Machine Learning */}
+<ServiceAccordion
+  icon="/data_icon.svg"
+  title="AI and Machine Learning"
+  summary="Harness the power of data-driven intelligence for your business."
+  description="Our AI and machine learning solutions help you automate, predict, and transform operations, leveraging advanced algorithms and data insights for maximum impact."
+  learnMoreLink="/services/ai-and-machine-learning"
+  services={[
+    {
+      title: "Predictive Analytics",
+      description: "Forecast future trends with advanced machine learning models",
+      iconName: "FaNetworkWired"
+    },
+    {
+      title: "Natural Language Processing",
+      description: "Enable machines to understand and interact with human language",
+      iconName: "FaSyncAlt"
+    },
+    {
+      title: "Computer Vision",
+      description: "Empower systems to interpret and analyze visual data",
+      iconName: "FaCloud"
+    },
+    {
+      title: "AI Automation",
+      description: "Streamline processes with intelligent automation solutions",
+      iconName: "FaShieldAlt"
+    }
+  ]}
+/>
+
 
   {/* Cyber Security */}
   <ServiceAccordion
@@ -531,7 +544,7 @@ export default function Home() {
   <div className="flex-grow border-t border-gray-400"></div>
 </div>
 
-    <LogoSlider />
+    <LogoSlider logos={logos} />
   </div>
 </>
 

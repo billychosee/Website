@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaPhoneAlt, } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { BsFillBuildingFill, BsMailbox2 } from "react-icons/bs";
-
 
 export default function Footer() {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -16,10 +15,26 @@ export default function Footer() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Email: ${formData.email}\nMessage: ${formData.message}`);
-    setFormData({ email: "", message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Your message was sent successfully!");
+        setFormData({ email: "", message: "" });
+      } else {
+        alert("There was a problem sending your message.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("There was a problem sending your message.");
+    }
   };
 
   return (
@@ -34,7 +49,6 @@ export default function Footer() {
           quality={90}
           priority
         />
-
       </div>
 
       <div className="relative z-10 px-0 md:mx-24">
@@ -56,7 +70,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
           {/* Column 1: Quick Links */}
           <div>
-            <h2 className="mb-4 text-xl font-bold lg:text-sm xl:text-base" >Our Company</h2>
+            <h2 className="mb-4 text-xl font-bold lg:text-sm xl:text-base">Our Company</h2>
             <ul className="space-y-2 text-xl lg:text-sm xl:text-base">
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
               <li><Link href="/services" className="hover:underline">Services</Link></li>
@@ -67,27 +81,25 @@ export default function Footer() {
 
           {/* Column 2: Contact Info */}
           <div className="flex flex-col items-center text-xl md:items-start lg:text-sm xl:text-base space-y-2">
-            <h2 className="items-center justify-center mb-4 font-bold">Contact Info</h2>
+            <h2 className="mb-4 font-bold">Contact Info</h2>
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
               <p>+263 86 880 08361</p>
             </div>
-            
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8DC440] w-4 h-4" />
-              <p>+263 78 956 6427 </p>
+              <p>+263 78 956 6427</p>
             </div>
-            
             <div className="flex items-center gap-2">
               <BsMailbox2 className="text-[#8DC440] w-4 h-4" />
-              <p>info@smatechgroup.com</p>
+              <a href="mailto:info@smatechgroup.com" className="hover:underline">
+                info@smatechgroup.com
+              </a>
             </div>
-            
             <div className="flex items-center gap-2">
               <BsFillBuildingFill className="text-[#8DC440] w-4 h-4" />
-              <p>13 Brentwood, Avenue, Harare, Zimbabwe</p>
+              <p>13 Brentwood Avenue, Harare, Zimbabwe</p>
             </div>
-            
           </div>
 
           {/* Column 3: Contact Form */}

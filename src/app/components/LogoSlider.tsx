@@ -2,16 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const logos = [
-  { logo: "/Smatech_logo.svg", url: "/" },
-  { logo: "/smatpay_logo.svg", url: "/" },
-  { logo: "/smat_qr_logo.svg", url: "/" },
-  { logo: "/smat_tutor_logo.svg", url: "/" },
-  { logo: "/smatprop_logo.svg", url: "/" },
-  { logo: "/njere_logo.svg", url: "/" },
-];
+type LogoItem = {
+  logo: string;
+  url: string;
+};
 
-export default function LogoSlider() {
+export default function LogoSlider({ logos }: { logos: LogoItem[] }) {
   return (
     <div className="w-full py-10 overflow-hidden bg-white">
       <div className="flex gap-16 px-4 animate-slide w-max">

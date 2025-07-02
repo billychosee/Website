@@ -7,6 +7,18 @@ import CountUp from "react-countup";
 import { useEffect, useState } from "react";
 import LogoSlider from "../components/LogoSlider";
 
+const logos = [
+  { logo: "/Smatech_logo.svg", url: "/" },
+  { logo: "/smatpay_logo.svg", url: "/" },
+  { logo: "/smat_qr_logo.svg", url: "/" },
+  { logo: "/smat_tutor_logo.svg", url: "/" },
+  { logo: "/smatprop_logo.svg", url: "/" },
+  { logo: "/njere_logo.svg", url: "/" },
+  { logo: "/CS-Logo.png", url: "/" },
+  { logo: "/icz-logo.png", url: "/" },
+  { logo: "/ipec_logo.png", url: "/" },
+];
+
 export default function AboutUs() {
   const [startCount, setStartCount] = useState(false);
 
@@ -264,7 +276,7 @@ export default function AboutUs() {
   <div className="flex-grow border-t border-gray-400"></div>
 </div>
 
-    <LogoSlider />
+    <LogoSlider logos={logos} />
   </div>
 </>
 
