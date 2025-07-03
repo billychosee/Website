@@ -83,7 +83,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="bg-white text-black">
+      <main className="text-black bg-white">
         <div   ref={heroRef}
         className="relative flex items-center justify-center min-h-screen px-6 py-24 overflow-hidden bg-gradient-to-t from-[#E8F7FD] to-white md:min-h-full lg:min-h-screen">
           
@@ -155,7 +155,7 @@ export default function Home() {
   {/* Column 3 - Button */}
   <div className="flex items-center justify-center w-full md:justify-end md:w-1/3">
 <Link href="/contact-us">
-  <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-white font-semibold">
+  <button className="px-6 py-3 text-sm font-semibold text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-white">
     Get in touch
   </button>
 </Link>
@@ -388,7 +388,7 @@ export default function Home() {
       />
     </div>
 
-    <div className="px-5 md:px-24 md:pb-20 pb-10 text-black flex items-center justify-center text-center flex-col ">
+    <div className="flex flex-col items-center justify-center px-5 pb-10 text-center text-black md:px-24 md:pb-20 ">
       <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl mb-6 md:mb-10">
         Let's get started
       </h2>
@@ -399,7 +399,7 @@ export default function Home() {
         Don't stress over technical issues, concentrate on your <br />
         business. We'll give you the help you need.
       </p>
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center w-full gap-4 md:flex-row">
         <CustomButton variant="primary">Speak to an Expert</CustomButton>
         <CustomButton variant="link">Learn more about services</CustomButton>
       </div>
@@ -554,7 +554,7 @@ export default function Home() {
 
 <section>
 <>
-  <div className="px-4 md:px-20 bg-[#E8F7FD] py-10">
+  <div className="px-4 md:px-20 bg-gradient-to-t from-[#E8F7FD] to-white py-10">
     <div className="flex items-center my-10">
   <div className="flex-grow border-t border-gray-400"></div>
   <span className="mx-4 text-sm font-semibold text-[#00b956] whitespace-nowrap">
