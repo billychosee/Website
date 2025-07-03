@@ -33,7 +33,7 @@ export default function DesktopNav() {
 
   return (
     <div className="flex items-center">
-      <ul className="items-center justify-center flex-1 hidden gap-8 font-semibold text-black md:flex">
+      <ul className="items-center justify-center flex-1 hidden gap-8 font-semibold text-black md:flex xl:gap-8 lg:gap-5">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           return (
@@ -45,7 +45,7 @@ export default function DesktopNav() {
             >
               <Link 
                 href={item.href} 
-                className={`flex flex-col items-center text-xs uppercase tracking-tight transition-colors ${activeDropdown === item.href ? 'text-[#8DC440]' : 'hover:text-[#8DC440]'}`}
+                className={`flex flex-col items-center text-xs xl:text-xs lg:text-[10px] uppercase tracking-tight transition-colors ${activeDropdown === item.href ? 'text-[#8DC440]' : 'hover:text-[#8DC440]'}`}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
               >
                 <Icon 
