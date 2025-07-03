@@ -42,7 +42,7 @@ export const ImageTextListSection: React.FC<ImageTextListSectionProps> = ({
         <ul className="space-y-2">
           {listItems.map((item, index) => (
             <li key={index} className="flex items-center gap-2 text-sm text-gray-800 lg:text-xs xl:text-sm">
-              <CheckCircle className="w-5 h-5 text-green-600" />
+              <CheckCircle className="w-5 h-5 text-[#00b956]" />
               {item}
             </li>
           ))}

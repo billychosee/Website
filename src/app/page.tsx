@@ -27,6 +27,7 @@ const logos = [
   { logo: "/CS-Logo.png", url: "/" },
   { logo: "/icz-logo.png", url: "/" },
   { logo: "/ipec_logo.png", url: "/" },
+  { logo: "/DC_logo.png", url: "/" },
 ];
 
 export default function Home() {
@@ -82,7 +83,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="bg-white">
+      <main className="bg-white text-black">
         <div   ref={heroRef}
         className="relative flex items-center justify-center min-h-screen px-6 py-24 overflow-hidden bg-gradient-to-t from-[#E8F7FD] to-white md:min-h-full lg:min-h-screen">
           
@@ -114,7 +115,7 @@ export default function Home() {
                   const element = document.getElementById('get-in-touch');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#8DC440] rounded-full hover:bg-[#03577A] cursor-pointer">
+                className="px-8 py-3 font-bold text-white transition-colors duration-300 bg-[#00b956] rounded-full hover:bg-[#03577A] cursor-pointer">
                 Get Started
               </button>
             </div>
@@ -132,7 +133,7 @@ export default function Home() {
           </div>
         </div>   
  </div>
-<div className="flex flex-col items-center justify-center gap-6 px-5 py-10 text-sm bg-white md:flex-row md:gap-10 md:px-20 lg:px-20 xl:px-64" id="get-in-touch">
+<div className="flex flex-col items-center justify-center gap-6 px-5 pb-10 text-sm bg-[#E8F7FD] md:flex-row md:gap-10 md:px-20 lg:px-20 xl:px-64" id="get-in-touch">
   {/* Column 1 - Image */}
   <div className="flex items-center justify-center w-full md:w-1/3">
     <Image
@@ -154,7 +155,7 @@ export default function Home() {
   {/* Column 3 - Button */}
   <div className="flex items-center justify-center w-full md:justify-end md:w-1/3">
 <Link href="/contact-us">
-  <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-gray-400">
+  <button className="px-6 py-3 text-sm text-black bg-gray-300 cursor-pointer rounded-3xl hover:bg-white font-semibold">
     Get in touch
   </button>
 </Link>
@@ -167,12 +168,12 @@ export default function Home() {
 
 {/* Industries Section */}
 
-<section className="bg-[#03577A] text-white py-16 px-6 md:px-24">
+<section className="bg-[#025679] text-white py-16 px-6 md:px-24">
 
 <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
   {/* Left column */}
   <div className="md:w-1/2">
-    <h1 className="text-sm font-semibold text-[#8DC440] uppercase tracking-wide mb-4">
+    <h1 className="text-sm font-semibold text-[#00b956] uppercase tracking-wide mb-4">
      Industries We Serve
     </h1>
     <h2 className="mb-4 text-3xl font-extrabold leading-snug md:text-4xl lg:text-xl">
@@ -183,7 +184,7 @@ export default function Home() {
   {/* Right column */}
   <div className="flex flex-col gap-6 md:w-1/2">
     {/* Green line */}
-    <div className="h-2 w-full bg-[#8DC440]" />
+    <div className="h-2 w-full bg-[#00b956]" />
 
     {/* Description and arrow */}
     <div className="flex items-center justify-between gap-4">
@@ -192,7 +193,7 @@ export default function Home() {
     <p className="max-w-md text-gray-100 lg:text-sm">
       We help lots of small, medium and enterprise businesses in many different areas with their IT needs.
     </p>
-    <div className="w-12 h-12 ml-4 rounded-full bg-[#4A90A4] flex-shrink-0 flex items-center justify-center hover:bg-[#387a8d] transition">
+    <div className="w-12 h-12 ml-4 rounded-full bg-[#0c7dad] flex-shrink-0 flex items-center justify-center hover:bg-white transition hover:text-black">
       <ArrowBigRightDash className="w-8 h-8" />
     </div>
   </div>
@@ -246,15 +247,15 @@ export default function Home() {
 />
   </div>
   <div className="flex flex-col justify-center w-full pt-10 space-y-5 text-center text-black lg:space-y-4 xl:space-y-10 md:w-1/2 md:justify-start md:text-start">
-    <h1 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h1>
-    <h2 className="text-[#4A90A4] text-3xl xl:text-[57px] font-bold lg:text-4xl">
+    <h1 className="text-[#00b956] text-sm lg:text-2xl font-bold xl:text-4xl">Arrange a</h1>
+    <h2 className="text-black text-3xl xl:text-[57px] font-bold lg:text-4xl">
       Free IT Consultancy.
     </h2>
     <p className="text-sm lg:text-xs xl:text-sm">
       At Smatech Group, we don&apos;t just provide products; we offer solutions that transform the way you do business.
     </p>
     <Link href="/contact-us">
-  <button className="bg-[#4A90A4] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-white hover:text-black cursor-pointer font-bold hover:shadow-2xl">
+  <button className="bg-[#025679] p-5 text-white text-sm lg:text-sm lg:px-14 xl:px-5 xl:py-6 w-full xl:w-[335px] hover:bg-white hover:text-black cursor-pointer font-bold hover:shadow-2xl">
     Tell us how we can help
   </button>
 </Link>
@@ -279,8 +280,8 @@ export default function Home() {
 <section className="flex items-center justify-center px-6 pt-6 text-center bg-white md:pt-20">
   
   <div className="flex flex-col items-center max-w-4xl space-y-6">
-    <p className="!text-sm !font-bold !text-[#8DC440] pt-20 md:pt-0">WHY WORK WITH US</p>
-    <h1 className="!text-[#4A90A4] !text-3xl xl:!text-[53px] !font-bold lg:!text-4xl">
+    <p className="text-sm font-bold text-[#00b956]] pt-20 md:pt-0">WHY WORK WITH US</p>
+    <h1 className="!text-[#025679] !text-3xl xl:!text-[53px] !font-bold lg:!text-4xl">
       6 reasons why you should partner with Smatech
     </h1>
   </div>
@@ -376,29 +377,47 @@ export default function Home() {
 {/* end of mission */}
 
 {/* start of lets get started */}
-
 <section>
-  
-  <div className="px-5 md:px-24 !py-20 space-y-6 md:space-y-14 md:min-h-full lg:min-h-screen text-black flex items-center justify-center text-center flex-col bg-gradient-to-t from-[#E8F7FD] to-white">
-    <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Let&apos;s get started</h2>
-    <h1 className="text-black text-3xl xl:text-[57px] font-bold lg:text-4xl">Still have questions?</h1>
-    <p>Don&apos;t stress over technical issues, concentrate on your business. We&apos;ll give you the help you need.</p>
-    <div className="w-full">
-<CustomButton variant="primary">
-  Speak to an Expert
-</CustomButton>
-      <div className="w-full h-2 mt-10 bg-black md:mt-20"/>
+  <div className="bg-gradient-to-t from-[#E8F7FD] to-white min-h-fit lg:min-h-screen">
+    <div>
+      {/* pattern inline above headings */}
+      <img
+        src="/pattern_bg.png"
+        alt="wave pattern"
+        className="w-full"
+      />
+    </div>
+
+    <div className="px-5 md:px-24 md:pb-20 pb-10 text-black flex items-center justify-center text-center flex-col ">
+      <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl mb-6 md:mb-10">
+        Let's get started
+      </h2>
+      <h1 className="text-black text-3xl xl:text-[70px] font-bold lg:text-4xl mb-6 md:mb-10">
+        Still have questions?
+      </h1>
+      <p className="mb-6 md:mb-10">
+        Don't stress over technical issues, concentrate on your <br />
+        business. We'll give you the help you need.
+      </p>
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4">
+        <CustomButton variant="primary">Speak to an Expert</CustomButton>
+        <CustomButton variant="link">Learn more about services</CustomButton>
+      </div>
+      <div className="w-full h-1 mt-6 bg-black md:mt-20 md:h-2" />
     </div>
   </div>
-  
 </section>
+
+
+
+
 
 {/* end of lets get started */}
 
 <div className="px-6 py-10 md:px-24">
   <div className="flex items-center my-10">
     <div className="flex-grow border-t border-gray-400"></div>
-    <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+    <span className="mx-4 text-sm font-semibold text-[#00b956] whitespace-nowrap">
       OUR SERVICES
     </span>
     <div className="flex-grow border-t border-gray-400"></div>
@@ -535,10 +554,10 @@ export default function Home() {
 
 <section>
 <>
-  <div className="px-4 md:px-20">
+  <div className="px-4 md:px-20 bg-[#E8F7FD] py-10">
     <div className="flex items-center my-10">
   <div className="flex-grow border-t border-gray-400"></div>
-  <span className="mx-4 text-sm font-semibold text-[#8DC440] whitespace-nowrap">
+  <span className="mx-4 text-sm font-semibold text-[#00b956] whitespace-nowrap">
     OUR PATNERS AND BUSINESS
   </span>
   <div className="flex-grow border-t border-gray-400"></div>

@@ -9,7 +9,7 @@ type LogoItem = {
 
 export default function LogoSlider({ logos }: { logos: LogoItem[] }) {
   return (
-    <div className="w-full py-10 overflow-hidden bg-white">
+    <div className="w-full overflow-hidden">
       <div className="flex gap-16 px-4 animate-slide w-max">
         {[...logos, ...logos].map((item, i) => (
           <Link key={i} href={item.url}>

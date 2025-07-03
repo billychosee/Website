@@ -11,7 +11,7 @@ export default function MissionStats() {
         className="px-5 md:px-24 bg-[#010626] md:min-h-full lg:min-h-screen text-center py-20 space-y-6 md:space-y-20"
         style={{ backgroundImage: "url('/world_bg.svg')" }}
       >
-        <p className="text-sm font-bold text-[#8DC440]">OUR MISSION</p>
+        <p className="text-sm font-bold text-[#00b956]">OUR MISSION</p>
         <h1 className="text-[#4A90A4] text-3xl xl:text-[53px] font-bold lg:text-4xl">
           Join us in embracing technology's possibilities.
         </h1>
@@ -38,11 +38,11 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 
   return (
     <div ref={ref} className="flex flex-col items-center justify-center gap-5 md:flex-row md:space-x-5">
-      <h1 className="text-6xl font-bold text-[#8DC440] lg:text-4xl xl:text-6xl">
+      <h1 className="text-6xl font-bold text-[#00b956] lg:text-4xl xl:text-6xl">
         {inView ? <CountUp end={value} duration={2} /> : 0}
         {suffix}
       </h1>
-      <p className="text-sm lg:text-xs xl:text-sm md:text-start">{label}</p>
+      <p className="text-sm lg:text-xs xl:text-sm md:text-start text-white">{label}</p>
     </div>
   );
 }

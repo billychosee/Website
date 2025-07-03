@@ -17,7 +17,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className={`fixed w-full z-50 ${mobileMenuOpen ? 'bg-white' : 'bg-white/95'} shadow-md backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed w-full z-50 ${mobileMenuOpen ? 'bg-white' : 'bg-white/95'}  backdrop-blur-sm transition-transform duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="flex items-center justify-between px-6 py-4 md:px-24 xl:px-32 lg:px-12">
         <div className="flex items-center flex-shrink-0 gap-2">
           <Link href="/">

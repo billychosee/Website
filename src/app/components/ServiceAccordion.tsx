@@ -100,7 +100,7 @@ export default function ServiceAccordion({
                 <div key={index} className="flex items-start gap-3 pl-1">
                   <div className="flex-shrink-0 mt-1">
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-                      {Icon && <Icon className="w-6 h-6 text-[#8DC440]" />}
+                      {Icon && <Icon className="w-6 h-6 text-[#00b956]" />}
                     </div>
                   </div>
                   <div>

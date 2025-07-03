@@ -15,7 +15,7 @@ export default function IndustryCard({
   iconSrc,
 }: IndustryCardProps) {
   return (
-    <div className="flex flex-col justify-between gap-10 p-6 text-black transition-all duration-300 bg-white shadow-md group hover:bg-[#8DC440] hover:text-white lg:gap-5 xl:gap-10">
+    <div className="flex flex-col justify-between gap-10 p-6 text-black transition-all duration-300 bg-white shadow-md group hover:bg-[#00b956] hover:text-white lg:gap-5 xl:gap-10">
       {/* Top: Icon and Title */}
       <div className="flex items-center justify-between transition-all duration-300">
         <h2 className="text-lg font-semibold lg:text-xs xl:text-lg">{title}</h2>
@@ -35,7 +35,7 @@ export default function IndustryCard({
         <p className="text-sm md:text-xs">{description}</p>
         <Link href="/">
         <ArrowUpRight
-          className="mt-2 text-green-200 transition-colors duration-300 group-hover:text-white"
+          className="mt-2 text-[#00b956] transition-colors duration-300 group-hover:text-white"
           size={18}
         />
         </Link>

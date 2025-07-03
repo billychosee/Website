@@ -44,7 +44,7 @@ export function ImageLeftAccordionRight({
           <div key={index} className="py-4 border-b border-gray-300">
             <button
               onClick={() => toggle(index)}
-              className="flex justify-between w-full text-left font-semibold text-[#4A90A4] hover:text-[#8DC440] focus:outline-none"
+              className="flex justify-between w-full text-left font-semibold text-[#4A90A4] hover:text-[#00b956] focus:outline-none"
             >
               <span>{item.question}</span>
               <span className="text-xl">

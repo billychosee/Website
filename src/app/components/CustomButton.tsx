@@ -16,9 +16,24 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   let variantClasses = "";
 
   if (variant === "primary") {
-    variantClasses = "bg-white text-black px-5 xl:px-20 lg:px-8 font-bold shadow-2xl hover:shadow-md text-sm xl:text-sm lg:text-xs";
+    variantClasses = "bg-white text-black px-14 xl:px-20 lg:px-8 font-bold shadow-2xl hover:shadow-md text-sm xl:text-sm lg:text-xs";
   } else if (variant === "link") {
-    variantClasses = "underline text-[#4A90A4] hover:text-[#3c7485] text-sm xl:text-sm lg:text-xs";
+    variantClasses = `
+      relative
+      font-bold
+      text-black
+      after:content-['']
+      after:absolute
+      after:left-0
+      after:bottom-5
+      after:h-[1px]
+      after:w-full
+      after:bg-[#00b956]
+      after:transition-all
+      after:duration-300
+      hover:after:w-0
+      hover:after:left-full
+    `;
   }
 
   return (
