@@ -153,7 +153,7 @@ export default function AboutUs() {
               are the cornerstones of success. With years of experience in the industry, our dedicated team of experts is at the forefront of technological advancements, ensuring that we offer the latest and most advanced hardware solutions to meet the evolving needs of our clients.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center w-full gap-4 md:flex-row">
+          <div className="flex flex-col items-center w-full gap-4 md:flex-row">
             <CustomButton variant="primary" className="!bg-[#00b956] !text-white hover:!bg-black">Speak to an Expert</CustomButton>
             <CustomButton variant="link">Learn more about services</CustomButton>
           </div>

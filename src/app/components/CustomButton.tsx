@@ -22,7 +22,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       sm:px-6 sm:py-4 sm:text-sm  /* Small devices */
       md:px-8 md:py-4  /* Medium devices */
       lg:px-10 lg:py-5 lg:text-[12px] /* Large devices */
-      xl:px-12 xl:py-5  /* Extra large devices */
+      xl:px-12 xl:py-5 xl:text-sm  /* Extra large devices */
     `;
   } else if (variant === "link") {
     variantClasses = `
@@ -30,7 +30,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       text-xs  /* Mobile/default */
       sm:text-sm  /* Small devices */
       lg:text-[12px]  /* Large devices */
-      xl:text-lg  /* Extra large devices */
+      xl:text-sm  /* Extra large devices */
       after:content-[''] after:absolute after:left-0 after:bottom-2
       sm:after:bottom-3
       xl:after:bottom-0
