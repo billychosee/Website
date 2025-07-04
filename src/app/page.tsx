@@ -377,6 +377,7 @@ export default function Home() {
 {/* end of mission */}
 
 {/* start of lets get started */}
+
 <section>
   <div className="bg-gradient-to-t from-[#E8F7FD] to-white min-h-fit lg:min-h-screen">
     <div>
@@ -407,10 +408,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-
-
-
 
 {/* end of lets get started */}
 

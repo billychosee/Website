@@ -17,7 +17,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 
   if (variant === "primary") {
     variantClasses = `
-      bg-white text-black font-bold shadow-2xl hover:shadow-md
+      bg-white text-black font-bold shadow-2xl hover:shadow-md hover:transition-all hover:duration-500
       px-4 py-3 text-xs  /* Mobile/default */
       sm:px-6 sm:py-4 sm:text-sm  /* Small devices */
       md:px-8 md:py-4  /* Medium devices */

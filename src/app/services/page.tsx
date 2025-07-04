@@ -30,7 +30,7 @@ export default function ServicesPage() {
             src="/services_bg.svg"
             alt="IT services and technology solutions background"
             fill
-            className="object-cover"
+            className="object-cover "
             priority
           />
           {/* Dark overlay for better text readability */}
@@ -123,22 +123,45 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+{/* start of lets get started */}
+
+<section>
+  <div className="bg-gradient-to-t from-[#E8F7FD] to-white min-h-fit lg:min-h-screen">
+    <div>
+      {/* pattern inline above headings */}
+      <img
+        src="/pattern_bg.png"
+        alt="wave pattern"
+        className="w-full"
+      />
+    </div>
+
+    <div className="flex flex-col items-center justify-center px-5 pb-10 text-center text-black md:px-24 md:pb-20 ">
+      <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl mb-6 md:mb-10">
+        Let's get started
+      </h2>
+      <h1 className="text-black text-3xl xl:text-[70px] font-bold lg:text-4xl mb-6 md:mb-10">
+        Still have questions?
+      </h1>
+      <p className="mb-6 md:mb-10">
+        Don't stress over technical issues, concentrate on your <br />
+        business. We'll give you the help you need.
+      </p>
+      <div className="flex flex-col items-center justify-center w-full gap-4 md:flex-row">
+        <CustomButton variant="primary">Speak to an Expert</CustomButton>
+        <CustomButton variant="link">Learn more about services</CustomButton>
+      </div>
+      <div className="w-full h-1 mt-6 bg-black md:mt-20 md:h-2" />
+    </div>
+  </div>
+</section>
+
+{/* end of lets get started */}
+
       <section>
-        <div className="px-5 md:px-24 !pt-20 space-y-6 md:space-y-5 text-black flex items-center justify-center text-center flex-col bg-gradient-to-t from-[#E8F7FD] to-white">
-          <h2 className="text-[#8DC440] text-sm lg:text-2xl font-bold xl:text-4xl">Let&apos;s Get Started</h2>
-          <h1 className="text-black text-3xl xl:text-[57px] font-bold lg:text-4xl">Still Have Questions About Our IT Services?</h1>
-          <p className="max-w-2xl">Don&apos;t stress over technical issues, concentrate on your business. We&apos;ll give you the IT support you need.</p>
-          <div className="w-full">
-            <CustomButton variant="primary">
-              Speak to an IT Expert
-            </CustomButton>
-            <div className="w-full h-2 mt-10 bg-black md:mt-20"/>
-          </div>
-        </div>
 
         {/* Stats Section */}
-        <div className="bg-[#E8F7FD] pt-0">
+        <div className="bg-[#E8F7FD] pb-14 md:pb-0">
           <CompanyProfile
             heading="Outreach by the Numbers"
             subheading="The energy of a startup with well-established IT expertise"

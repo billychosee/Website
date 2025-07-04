@@ -38,7 +38,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ heading, subheading, st
 
   return (
     <div
-      className="flex flex-col gap-5 pt-20 mx-5 space-y-6 text-center text-black md:mx-24 md:flex-row md:text-start md:space-y-14"
+      className="flex flex-col gap-5 pt-5 mx-5 space-y-6 text-center text-black md:mx-24 md:flex-row md:text-start md:space-y-14"
       id="company-stats"
     >
       <div className="md:w-2/5">
